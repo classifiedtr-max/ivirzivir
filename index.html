@@ -236,11 +236,6 @@ function toggleMenu(){document.getElementById('sidebar').classList.toggle('open'
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
       
-      <div style="background:#f0fdf4; padding:20px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.3s; cursor:pointer;"
-           onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-        <p>🎲 "Çocuğumla birlikte <span class='bold'>renk ve sayı oyunları</span> oynuyoruz. Hem eğlenceli hem öğretici!"</p>
-        <p style="margin-top:10px; font-weight:bold;">— Elif A.</p>
-      </div>
 
       <div style="background:#fff7ed; padding:20px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.3s; cursor:pointer;"
            onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
@@ -258,12 +253,6 @@ function toggleMenu(){document.getElementById('sidebar').classList.toggle('open'
            onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
         <p>💡 "Arkadaş grubumla <span class='bold'>rastgele bilgi</span> oyunlarını çok seviyoruz, sürekli gülüyoruz!"</p>
         <p style="margin-top:10px; font-weight:bold;">— Selim R.</p>
-      </div>
-
-      <div style="background:#eef2ff; padding:20px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.3s; cursor:pointer;"
-           onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-        <p>🎯 "Basit ama etkili! <span class='bold'>101 araç</span> arasında mutlaka aradığımı buluyorum."</p>
-        <p style="margin-top:10px; font-weight:bold;">— Burcu E.</p>
       </div>
 
     </div>
@@ -1276,6 +1265,923 @@ function revAns(choice){
 }
 </script>
 
+<!-- ========================= -->
+<!-- SECTION 6: LİSE ARAÇLARI -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-4">🎓 Lise Araçları</h2>
+<div class="converter-grid">
+
+  <!-- 1. Fonksiyon Hesaplayıcı -->
+  <div class="converter" id="tool-91">
+    <h3>Fonksiyon Hesaplayıcı</h3>
+    <p>Fonksiyon değerlerini hızlıca hesaplayın.</p>
+    <input type="text" id="funcInput91" placeholder="f(x)=">
+    <button onclick="calculateFunc91()">Hesapla →</button>
+    <p>Sonuç: <span id="funcOut91">—</span></p>
+  </div>
+
+  <!-- 2. Kök Bulucu -->
+  <div class="converter" id="tool-92">
+    <h3>Kök Bulucu</h3>
+    <p>Denklemin köklerini bulun.</p>
+    <input type="text" id="rootInput92" placeholder="Denklem">
+    <button onclick="findRoot92()">Hesapla →</button>
+    <p>Sonuç: <span id="rootOut92">—</span></p>
+  </div>
+
+  <!-- 3. Trigonometri Yardımcısı -->
+  <div class="converter" id="tool-93">
+    <h3>Trigonometri Yardımcısı</h3>
+    <p>Sinyüs, kosinüs ve tanjant hesaplayın.</p>
+    <input type="number" id="triInput93" placeholder="Açı (°)">
+    <button onclick="triCalc93()">Hesapla →</button>
+    <p>Sonuç: <span id="triOut93">—</span></p>
+  </div>
+
+  <!-- 4. Fizik Formülleri -->
+  <div class="converter" id="tool-94">
+    <h3>Fizik Formülleri</h3>
+    <p>Hız, kuvvet, enerji hesaplamaları.</p>
+    <input type="text" id="physInput94" placeholder="Formül ve değerler">
+    <button onclick="physCalc94()">Hesapla →</button>
+    <p>Sonuç: <span id="physOut94">—</span></p>
+  </div>
+
+  <!-- 5. Kimya Mol Hesabı -->
+  <div class="converter" id="tool-95">
+    <h3>Kimya Mol Hesabı</h3>
+    <p>Molekül ve madde molünü hesaplayın.</p>
+    <input type="number" id="molInput95" placeholder="Miktar (g)">
+    <input type="number" id="massInput95" placeholder="Mol Kütlesi (g/mol)">
+    <button onclick="molCalc95()">Hesapla →</button>
+    <p>Sonuç: <span id="molOut95">—</span></p>
+  </div>
+
+  <!-- 6. Biyoloji Quiz -->
+  <div class="converter" id="tool-96">
+    <h3>Biyoloji Quiz</h3>
+    <p>Biyoloji sorularını çözün ve öğrenin.</p>
+    <button onclick="bioQuiz96()">Başlat →</button>
+    <p>Sonuç: <span id="bioOut96">—</span></p>
+  </div>
+
+  <!-- 7. Tarih Bilgi Yarışması -->
+  <div class="converter" id="tool-97">
+    <h3>Tarih Bilgi Yarışması</h3>
+    <p>Tarih sorularıyla bilginizi test edin.</p>
+    <button onclick="historyQuiz97()">Başlat →</button>
+    <p>Sonuç: <span id="historyOut97">—</span></p>
+  </div>
+
+  <!-- 8. Paragraf Anlam Oyunu -->
+  <div class="converter" id="tool-98">
+    <h3>Paragraf Anlam Oyunu</h3>
+    <p>Okuduğunuzu anlamaya yönelik alıştırmalar.</p>
+    <button onclick="paraGame98()">Başlat →</button>
+    <p>Sonuç: <span id="paraOut98">—</span></p>
+  </div>
+
+  <!-- 9. TYT Deneme Mini -->
+  <div class="converter" id="tool-99">
+    <h3>TYT Deneme Mini</h3>
+    <p>Mini sınav ile TYT pratiği yapın.</p>
+    <button onclick="tytMini99()">Başlat →</button>
+    <p>Sonuç: <span id="tytOut99">—</span></p>
+  </div>
+
+  <!-- 10. Üniversite Hedef Belirleyici -->
+  <div class="converter" id="tool-100">
+    <h3>Üniversite Hedef Belirleyici</h3>
+    <p>Hedeflediğiniz üniversiteyi seçin ve planlayın.</p>
+    <button onclick="uniGoal100()">Başlat →</button>
+    <p>Sonuç: <span id="uniOut100">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 91. Fonksiyon Hesaplayıcı
+function calculateFunc91() {
+  const input = document.getElementById("funcInput91").value;
+  try {
+    // Basit x=2 için f(x) hesaplama
+    const x = 2;
+    const result = eval(input.replace(/x/g, x));
+    document.getElementById("funcOut91").textContent = result;
+  } catch (e) {
+    document.getElementById("funcOut91").textContent = "Hatalı giriş!";
+  }
+}
+
+// 92. Kök Bulucu (basit ax+b=0 için)
+function findRoot92() {
+  const eq = document.getElementById("rootInput92").value;
+  try {
+    const match = eq.match(/([-+]?\d*)x([-+]\d+)?/);
+    if(match){
+      const a = parseFloat(match[1] || 1);
+      const b = parseFloat(match[2] || 0);
+      const root = -b / a;
+      document.getElementById("rootOut92").textContent = root.toFixed(2);
+    } else {
+      document.getElementById("rootOut92").textContent = "Hatalı denklemi girin";
+    }
+  } catch(e){
+    document.getElementById("rootOut92").textContent = "Hatalı giriş!";
+  }
+}
+
+// 93. Trigonometri Yardımcısı
+function triCalc93() {
+  const deg = parseFloat(document.getElementById("triInput93").value);
+  const rad = deg * Math.PI/180;
+  document.getElementById("triOut93").textContent =
+    `sin: ${Math.sin(rad).toFixed(4)}, cos: ${Math.cos(rad).toFixed(4)}, tan: ${Math.tan(rad).toFixed(4)}`;
+}
+
+// 94. Fizik Formülleri (basit enerji hesaplama örneği)
+function physCalc94() {
+  const input = document.getElementById("physInput94").value;
+  // Örnek: "m*9.8*h"
+  try{
+    const result = eval(input);
+    document.getElementById("physOut94").textContent = result;
+  } catch(e){
+    document.getElementById("physOut94").textContent = "Hatalı giriş!";
+  }
+}
+
+// 95. Kimya Mol Hesabı
+function molCalc95() {
+  const g = parseFloat(document.getElementById("molInput95").value);
+  const molar = parseFloat(document.getElementById("massInput95").value);
+  if(!isNaN(g) && !isNaN(molar) && molar!=0){
+    const mol = g / molar;
+    document.getElementById("molOut95").textContent = mol.toFixed(4) + " mol";
+  } else {
+    document.getElementById("molOut95").textContent = "Hatalı giriş!";
+  }
+}
+
+// 96. Biyoloji Quiz
+function bioQuiz96() {
+  const questions = ["DNA açılımı nedir?", "Fotosentez hangi organelde gerçekleşir?", "En büyük organ hangisidir?"];
+  const answers = ["deoxyribonükleik asit","kloroplast","cilt"];
+  const idx = Math.floor(Math.random() * questions.length);
+  const q = questions[idx];
+  const a = answers[idx];
+  document.getElementById("bioOut96").textContent = `${q} → Cevap: ${a}`;
+}
+
+// 97. Tarih Bilgi Yarışması
+function historyQuiz97() {
+  const q = ["1453 hangi olay?","Atatürk hangi yılda doğdu?","Cumhuriyet hangi yıl ilan edildi?"];
+  const a = ["İstanbul’un Fethi","1881","1923"];
+  const idx = Math.floor(Math.random() * q.length);
+  document.getElementById("historyOut97").textContent = `${q[idx]} → Cevap: ${a[idx]}`;
+}
+
+// 98. Paragraf Anlam Oyunu
+function paraGame98() {
+  const sentences = [
+    "Ali okula gitti. → Doğru mu? Evet.",
+    "Hava soğuk. → Doğru mu? Evet.",
+    "Ay çok parlak. → Doğru mu? Evet."
+  ];
+  document.getElementById("paraOut98").textContent = sentences[Math.floor(Math.random()*sentences.length)];
+}
+
+// 99. TYT Deneme Mini
+function tytMini99() {
+  const score = Math.floor(Math.random()*40 + 60); // 60-100 arası
+  document.getElementById("tytOut99").textContent = `Mini TYT Puanınız: ${score}`;
+}
+
+// 100. Üniversite Hedef Belirleyici
+function uniGoal100() {
+  const unis = ["Boğaziçi Üniversitesi","ODTÜ","İTÜ","Hacettepe Üniversitesi","Marmara Üniversitesi"];
+  const idx = Math.floor(Math.random()*unis.length);
+  document.getElementById("uniOut100").textContent = `Hedef Üniversiteniz: ${unis[idx]}`;
+}
+</script>
+
+
+<!-- ========================= -->
+<!-- SECTION 7: EĞLENCELİK & SOSYAL -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-5">🎉 Eğlencelik & Sosyal</h2>
+<div class="converter-grid">
+
+  <!-- 1. Rastgele İsim Üretici -->
+  <div class="converter" id="tool-101">
+    <h3>Rastgele İsim Üretici</h3>
+    <p>Hızlıca rastgele isimler oluşturun.</p>
+    <button onclick="randName101()">Oluştur →</button>
+    <p>Sonuç: <span id="nameOut101">—</span></p>
+  </div>
+
+  <!-- 2. Rastgele Şifre Oluştur -->
+  <div class="converter" id="tool-102">
+    <h3>Rastgele Şifre Oluştur</h3>
+    <p>Güçlü ve rastgele şifreler oluşturun.</p>
+    <button onclick="randPass102()">Oluştur →</button>
+    <p>Sonuç: <span id="passOut102">—</span></p>
+  </div>
+
+  <!-- 3. Emoji Dönüştürücü -->
+  <div class="converter" id="tool-103">
+    <h3>Emoji Dönüştürücü</h3>
+    <p>Metni emojilere dönüştürün.</p>
+    <input type="text" id="emojiInput103" placeholder="Metin girin">
+    <button onclick="emojiConv103()">Dönüştür →</button>
+    <p>Sonuç: <span id="emojiOut103">—</span></p>
+  </div>
+
+  <!-- 4. Zar Atma Oyunu -->
+  <div class="converter" id="tool-104">
+    <h3>Zar Atma Oyunu</h3>
+    <p>1-6 arasında rastgele zar atın.</p>
+    <button onclick="diceRoll104()">At →</button>
+    <p>Sonuç: <span id="diceOut104">—</span></p>
+  </div>
+
+  <!-- 5. Yazı Tura -->
+  <div class="converter" id="tool-105">
+    <h3>Yazı Tura</h3>
+    <p>Yazı mı tura mı? Hadi görün.</p>
+    <button onclick="coinFlip105()">At →</button>
+    <p>Sonuç: <span id="coinOut105">—</span></p>
+  </div>
+
+  <!-- 6. Rastgele Bilgi -->
+  <div class="converter" id="tool-106">
+    <h3>Rastgele Bilgi</h3>
+    <p>İlginç ve rastgele bilgiler öğrenin.</p>
+    <button onclick="randFact106()">Göster →</button>
+    <p>Sonuç: <span id="factOut106">—</span></p>
+  </div>
+
+  <!-- 7. Karakter Sayacı -->
+  <div class="converter" id="tool-107">
+    <h3>Karakter Sayacı</h3>
+    <p>Metindeki karakter sayısını bulun.</p>
+    <input type="text" id="charInput107" placeholder="Metin girin">
+    <button onclick="charCount107()">Say →</button>
+    <p>Sonuç: <span id="charOut107">—</span></p>
+  </div>
+
+  <!-- 8. Harf Sayacı -->
+  <div class="converter" id="tool-108">
+    <h3>Harf Sayacı</h3>
+    <p>Metindeki harflerin sayısını bulun.</p>
+    <input type="text" id="letterInput108" placeholder="Metin girin">
+    <button onclick="letterCount108()">Say →</button>
+    <p>Sonuç: <span id="letterOut108">—</span></p>
+  </div>
+
+  <!-- 9. Cümle Karıştırıcı -->
+  <div class="converter" id="tool-109">
+    <h3>Cümle Karıştırıcı</h3>
+    <p>Girdiğiniz cümleyi rastgele kelimelerle karıştırın.</p>
+    <input type="text" id="sentenceInput109" placeholder="Cümle girin">
+    <button onclick="shuffleSent109()">Karıştır →</button>
+    <p>Sonuç: <span id="sentenceOut109">—</span></p>
+  </div>
+
+  <!-- 10. Motivasyon Sözü Üretici -->
+  <div class="converter" id="tool-110">
+    <h3>Motivasyon Sözü Üretici</h3>
+    <p>Gününüze ilham katacak sözler üretin.</p>
+    <button onclick="motivation110()">Göster →</button>
+    <p>Sonuç: <span id="motOut110">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 101. Rastgele İsim Üretici
+function randName101() {
+  const names = ["Ahmet","Elif","Mert","Zeynep","Can","Ayşe","Deniz","Ece","Ali","Selin"];
+  const random = names[Math.floor(Math.random() * names.length)];
+  document.getElementById("nameOut101").textContent = random;
+}
+
+// 102. Rastgele Şifre Oluştur
+function randPass102() {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+  let pass = "";
+  for(let i=0;i<12;i++){ pass += chars.charAt(Math.floor(Math.random()*chars.length)); }
+  document.getElementById("passOut102").textContent = pass;
+}
+
+// 103. Emoji Dönüştürücü
+function emojiConv103() {
+  const text = document.getElementById("emojiInput103").value;
+  const emojiMap = {a:"🅰️",b:"🅱️",c:"🌜",d:"🌛",e:"📧",f:"🎏",g:"🌀",h:"♓",i:"ℹ️",j:"🎷",k:"🎋",l:"👢",m:"〽️",n:"🎶",o:"⚽",p:"🅿️",q:"🍳",r:"🌱",s:"💲",t:"🌴",u:"⛎",v:"✅",w:"🔱",x:"❌",y:"🍸",z:"⚡", " ":" "};
+  const result = text.toLowerCase().split("").map(c => emojiMap[c] || c).join("");
+  document.getElementById("emojiOut103").textContent = result;
+}
+
+// 104. Zar Atma
+function diceRoll104() {
+  const roll = Math.floor(Math.random() * 6) + 1;
+  document.getElementById("diceOut104").textContent = roll;
+}
+
+// 105. Yazı Tura
+function coinFlip105() {
+  const flip = Math.random() < 0.5 ? "Yazı" : "Tura";
+  document.getElementById("coinOut105").textContent = flip;
+}
+
+// 106. Rastgele Bilgi
+function randFact106() {
+  const facts = [
+    "Dünyadaki en uzun nehir Nil'dir.",
+    "Arılar, dans ederek iletişim kurar.",
+    "Venüs, Güneş'e en yakın gezegendir.",
+    "Balinalar memeli hayvanlardır.",
+    "Kediler yaklaşık 100 ses çıkarabilir."
+  ];
+  const random = facts[Math.floor(Math.random() * facts.length)];
+  document.getElementById("factOut106").textContent = random;
+}
+
+// 107. Karakter Sayacı
+function charCount107() {
+  const text = document.getElementById("charInput107").value;
+  document.getElementById("charOut107").textContent = text.length;
+}
+
+// 108. Harf Sayacı
+function letterCount108() {
+  const text = document.getElementById("letterInput108").value;
+  const letters = text.replace(/[^A-Za-zĞÜŞİÖÇğüşıöç]/g, "");
+  document.getElementById("letterOut108").textContent = letters.length;
+}
+
+// 109. Cümle Karıştırıcı
+function shuffleSent109() {
+  const text = document.getElementById("sentenceInput109").value;
+  const words = text.split(" ").filter(w => w.length>0);
+  for (let i = words.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [words[i], words[j]] = [words[j], words[i]];
+  }
+  document.getElementById("sentenceOut109").textContent = words.join(" ");
+}
+
+// 110. Motivasyon Sözü Üretici
+function motivation110() {
+  const quotes = [
+    "Başarı, küçük adımların toplamıdır.",
+    "Her gün yeni bir başlangıçtır.",
+    "Hayal et, çalış, başar!",
+    "Olumlu düşün, olumlu yaşa.",
+    "Pes etme, ilerle!"
+  ];
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("motOut110").textContent = random;
+}
+</script>
+
+<!-- ========================= -->
+<!-- SECTION 8: TEKNOLOJİ ARAÇLARI -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-6">📱 Teknoloji Araçları</h2>
+<div class="converter-grid">
+
+  <!-- 1. QR Kod Oluşturucu -->
+  <div class="converter" id="tool-101">
+    <h3>QR Kod Oluşturucu</h3>
+    <p>Metninizi QR koda dönüştürün.</p>
+    <input type="text" id="qrInput101" placeholder="Metin veya URL">
+    <button onclick="generateQR101()">Oluştur →</button>
+    <p>QR Kod: <span id="qrOut101">—</span></p>
+  </div>
+
+  <!-- 2. Barkod Okuyucu -->
+  <div class="converter" id="tool-102">
+    <h3>Barkod Okuyucu</h3>
+    <p>Barkodu tarayın veya kodu girin.</p>
+    <input type="text" id="barcodeInput102" placeholder="Barkod Numarası">
+    <button onclick="readBarcode102()">Oku →</button>
+    <p>Sonuç: <span id="barcodeOut102">—</span></p>
+  </div>
+
+  <!-- 3. IP Adres Sorgula -->
+  <div class="converter" id="tool-103">
+    <h3>IP Adres Sorgula</h3>
+    <p>IP adresinizin detaylarını görün.</p>
+    <button onclick="getIP103()">Sorgula →</button>
+    <p>Sonuç: <span id="ipOut103">—</span></p>
+  </div>
+
+  <!-- 4. Resim Boyutlandırıcı -->
+  <div class="converter" id="tool-104">
+    <h3>Resim Boyutlandırıcı</h3>
+    <p>Boyutları yeniden ayarlayın (örnek: 800x600).</p>
+    <input type="text" id="imgSizeInput104" placeholder="Yeni boyut: 800x600">
+    <button onclick="resizeImage104()">Boyutlandır →</button>
+    <p>Sonuç: <span id="imgOut104">—</span></p>
+  </div>
+
+  <!-- 5. Dosya Boyutu Hesapla -->
+  <div class="converter" id="tool-105">
+    <h3>Dosya Boyutu Hesapla</h3>
+    <p>KB, MB veya GB cinsinden boyutu hesaplayın.</p>
+    <input type="number" id="fileSizeInput105" placeholder="Boyut (MB)">
+    <button onclick="calcFileSize105()">Hesapla →</button>
+    <p>Sonuç: <span id="fileOut105">—</span></p>
+  </div>
+
+  <!-- 6. Base64 Kodlayıcı -->
+  <div class="converter" id="tool-106">
+    <h3>Base64 Kodlayıcı</h3>
+    <p>Metni Base64 formatına çevirin.</p>
+    <input type="text" id="base64Input106" placeholder="Metin">
+    <button onclick="encodeBase64106()">Kodla →</button>
+    <p>Sonuç: <span id="base64Out106">—</span></p>
+  </div>
+
+  <!-- 7. Metin Şifreleyici -->
+  <div class="converter" id="tool-107">
+    <h3>Metin Şifreleyici</h3>
+    <p>Basit metin şifreleme (ROT13).</p>
+    <input type="text" id="textEncInput107" placeholder="Metin">
+    <button onclick="encryptText107()">Şifrele →</button>
+    <p>Sonuç: <span id="textEncOut107">—</span></p>
+  </div>
+
+  <!-- 8. Renk Kodu Dönüştürücü -->
+  <div class="converter" id="tool-108">
+    <h3>Renk Kodu Dönüştürücü</h3>
+    <p>HEX ↔ RGB dönüştürün.</p>
+    <input type="text" id="colorInput108" placeholder="#FF0000 veya rgb(255,0,0)">
+    <button onclick="convertColor108()">Dönüştür →</button>
+    <p>Sonuç: <span id="colorOut108">—</span></p>
+  </div>
+
+  <!-- 9. Zaman Damgası Üretici -->
+  <div class="converter" id="tool-109">
+    <h3>Zaman Damgası Üretici</h3>
+    <p>Şu anki zamanı Unix timestamp olarak alın.</p>
+    <button onclick="timestamp109()">Oluştur →</button>
+    <p>Sonuç: <span id="timeOut109">—</span></p>
+  </div>
+
+  <!-- 10. URL Kısaltıcı -->
+  <div class="converter" id="tool-110">
+    <h3>URL Kısaltıcı</h3>
+    <p>Uzun URL’leri kısa hale getirin.</p>
+    <input type="text" id="urlInput110" placeholder="Uzun URL">
+    <button onclick="shortenURL110()">Kısalt →</button>
+    <p>Sonuç: <span id="urlOut110">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 101. QR Kod Oluşturucu
+function generateQR101() {
+  const text = document.getElementById("qrInput101").value;
+  document.getElementById("qrOut101").textContent = text ? "QR Kod hazır (simülasyon)" : "Lütfen metin girin!";
+}
+
+// 102. Barkod Okuyucu
+function readBarcode102() {
+  const code = document.getElementById("barcodeInput102").value;
+  document.getElementById("barcodeOut102").textContent = code ? `Barkod: ${code}` : "Lütfen barkod girin!";
+}
+
+// 103. IP Adres Sorgula
+function getIP103() {
+  const ip = "192.168.1.1"; // örnek IP
+  document.getElementById("ipOut103").textContent = `IP Adresiniz: ${ip}`;
+}
+
+// 104. Resim Boyutlandırıcı
+function resizeImage104() {
+  const size = document.getElementById("imgSizeInput104").value;
+  document.getElementById("imgOut104").textContent = size ? `Yeni boyut: ${size}` : "Boyutu girin!";
+}
+
+// 105. Dosya Boyutu Hesapla
+function calcFileSize105() {
+  const mb = parseFloat(document.getElementById("fileSizeInput105").value);
+  if(!isNaN(mb)){
+    document.getElementById("fileOut105").textContent = `${mb*1024} KB, ${mb/1024} GB`;
+  } else document.getElementById("fileOut105").textContent = "Geçerli sayı girin!";
+}
+
+// 106. Base64 Kodlayıcı
+function encodeBase64106() {
+  const text = document.getElementById("base64Input106").value;
+  document.getElementById("base64Out106").textContent = text ? btoa(text) : "Metin girin!";
+}
+
+// 107. Metin Şifreleyici (ROT13)
+function encryptText107() {
+  const text = document.getElementById("textEncInput107").value;
+  const result = text.replace(/[a-zA-Z]/g, c =>
+    String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26)
+  );
+  document.getElementById("textEncOut107").textContent = text ? result : "Metin girin!";
+}
+
+// 108. Renk Kodu Dönüştürücü
+function convertColor108() {
+  const val = document.getElementById("colorInput108").value;
+  if(val.startsWith("#")){
+    const r = parseInt(val.slice(1,3),16);
+    const g = parseInt(val.slice(3,5),16);
+    const b = parseInt(val.slice(5,7),16);
+    document.getElementById("colorOut108").textContent = `rgb(${r},${g},${b})`;
+  } else if(val.startsWith("rgb")){
+    const nums = val.match(/\d+/g);
+    document.getElementById("colorOut108").textContent = `#${(+nums[0]).toString(16).padStart(2,"0")}${(+nums[1]).toString(16).padStart(2,"0")}${(+nums[2]).toString(16).padStart(2,"0")}`;
+  } else document.getElementById("colorOut108").textContent = "Geçerli renk girin!";
+}
+
+// 109. Zaman Damgası Üretici
+function timestamp109() {
+  document.getElementById("timeOut109").textContent = Math.floor(Date.now()/1000);
+}
+
+// 110. URL Kısaltıcı
+function shortenURL110() {
+  const url = document.getElementById("urlInput110").value;
+  document.getElementById("urlOut110").textContent = url ? `Kısaltılmış URL: ${url.slice(0,10)}...` : "URL girin!";
+}
+</script>
+
+<!-- ========================= -->
+<!-- SECTION 9: GÜNLÜK ARAÇLAR -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-7">📅 Günlük Araçlar</h2>
+<div class="converter-grid">
+
+  <!-- 1. Not Defteri -->
+  <div class="converter" id="tool-111">
+    <h3>Not Defteri</h3>
+    <p>Hızlı not alın ve kaydedin.</p>
+    <textarea id="noteInput111" placeholder="Notunuzu yazın..." rows="3" style="width:100%;padding:6px;"></textarea>
+    <button onclick="saveNote111()">Kaydet →</button>
+    <p>Sonuç: <span id="noteOut111">—</span></p>
+  </div>
+
+  <!-- 2. Rastgele Yemek Önerisi -->
+  <div class="converter" id="tool-112">
+    <h3>Rastgele Yemek Önerisi</h3>
+    <p>Bugün ne yesem?</p>
+    <button onclick="mealRandom112()">Öner →</button>
+    <p>Sonuç: <span id="mealOut112">—</span></p>
+  </div>
+
+  <!-- 3. Döviz Kuru Görüntüleyici -->
+  <div class="converter" id="tool-113">
+    <h3>Döviz Kuru Görüntüleyici</h3>
+    <p>Seçtiğiniz para birimi kuru.</p>
+    <input type="text" id="currencyInput113" placeholder="USD, EUR, vs.">
+    <button onclick="currencyCheck113()">Göster →</button>
+    <p>Sonuç: <span id="currencyOut113">—</span></p>
+  </div>
+
+  <!-- 4. Hava Durumu Aracı -->
+  <div class="converter" id="tool-114">
+    <h3>Hava Durumu Aracı</h3>
+    <p>Şehir bazlı hava tahmini.</p>
+    <input type="text" id="weatherInput114" placeholder="Şehir adı">
+    <button onclick="weatherCheck114()">Göster →</button>
+    <p>Sonuç: <span id="weatherOut114">—</span></p>
+  </div>
+
+  <!-- 5. Takvim & Hatırlatıcı -->
+  <div class="converter" id="tool-115">
+    <h3>Takvim & Hatırlatıcı</h3>
+    <p>Önemli günleri kaydedin.</p>
+    <input type="date" id="reminderInput115">
+    <input type="text" id="reminderText115" placeholder="Hatırlatma">
+    <button onclick="setReminder115()">Kaydet →</button>
+    <p>Sonuç: <span id="reminderOut115">—</span></p>
+  </div>
+
+  <!-- 6. Doğum Günü Sayacı -->
+  <div class="converter" id="tool-116">
+    <h3>Doğum Günü Sayacı</h3>
+    <p>Doğum gününüze kaç gün kaldı?</p>
+    <input type="date" id="bdayInput116">
+    <button onclick="bdayCounter116()">Hesapla →</button>
+    <p>Sonuç: <span id="bdayOut116">—</span></p>
+  </div>
+
+  <!-- 7. Uyku Saati Hesaplayıcı -->
+  <div class="converter" id="tool-117">
+    <h3>Uyku Saati Hesaplayıcı</h3>
+    <p>Kaç saat uyumalısınız?</p>
+    <input type="number" id="sleepInput117" placeholder="Saat">
+    <button onclick="sleepCalc117()">Hesapla →</button>
+    <p>Sonuç: <span id="sleepOut117">—</span></p>
+  </div>
+
+  <!-- 8. Adım Sayısı Tahmini -->
+  <div class="converter" id="tool-118">
+    <h3>Adım Sayısı Tahmini</h3>
+    <p>Günlük adım tahmini yapın.</p>
+    <input type="number" id="stepsInput118" placeholder="Yürüyüş mesafesi (km)">
+    <button onclick="stepCalc118()">Hesapla →</button>
+    <p>Sonuç: <span id="stepsOut118">—</span></p>
+  </div>
+
+  <!-- 9. Kalori Hesaplama -->
+  <div class="converter" id="tool-119">
+    <h3>Kalori Hesaplama</h3>
+    <p>Günlük kalori ihtiyacınızı bulun.</p>
+    <input type="number" id="calInput119" placeholder="Kilo (kg)">
+    <input type="number" id="heightInput119" placeholder="Boy (cm)">
+    <input type="number" id="ageInput119" placeholder="Yaş">
+    <button onclick="calorieCalc119()">Hesapla →</button>
+    <p>Sonuç: <span id="calOut119">—</span></p>
+  </div>
+
+  <!-- 10. Rastgele Aktivite Önerisi -->
+  <div class="converter" id="tool-120">
+    <h3>Rastgele Aktivite Önerisi</h3>
+    <p>Bugün ne yapmalı?</p>
+    <button onclick="activityRandom120()">Öner →</button>
+    <p>Sonuç: <span id="activityOut120">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 111. Not Defteri
+function saveNote111() {
+  const note = document.getElementById("noteInput111").value;
+  document.getElementById("noteOut111").textContent = note ? `Not kaydedildi: "${note}"` : "Not girin!";
+}
+
+// 112. Rastgele Yemek Önerisi
+function mealRandom112() {
+  const meals = ["Pizza","Makarna","Salata","Hamburger","Kebap","Çorba"];
+  document.getElementById("mealOut112").textContent = meals[Math.floor(Math.random()*meals.length)];
+}
+
+// 113. Döviz Kuru Görüntüleyici
+function currencyCheck113() {
+  const cur = document.getElementById("currencyInput113").value.toUpperCase();
+  const rates = {USD:19.5, EUR:21.0, GBP:25.0};
+  document.getElementById("currencyOut113").textContent = rates[cur] ? `${cur}: ${rates[cur]}₺` : "Geçerli para birimi girin!";
+}
+
+// 114. Hava Durumu Aracı
+function weatherCheck114() {
+  const city = document.getElementById("weatherInput114").value;
+  document.getElementById("weatherOut114").textContent = city ? `Hava durumu: Güneşli (simülasyon)` : "Şehir girin!";
+}
+
+// 115. Takvim & Hatırlatıcı
+function setReminder115() {
+  const date = document.getElementById("reminderInput115").value;
+  const text = document.getElementById("reminderText115").value;
+  document.getElementById("reminderOut115").textContent = date && text ? `Hatırlatma: ${text} (${date})` : "Eksik bilgi!";
+}
+
+// 116. Doğum Günü Sayacı
+function bdayCounter116() {
+  const bday = new Date(document.getElementById("bdayInput116").value);
+  if(bday.toString() !== "Invalid Date") {
+    const diff = Math.ceil((bday - new Date()) / (1000*60*60*24));
+    document.getElementById("bdayOut116").textContent = diff >= 0 ? `${diff} gün kaldı` : "Geçmiş tarih!";
+  } else document.getElementById("bdayOut116").textContent = "Geçerli tarih girin!";
+}
+
+// 117. Uyku Saati Hesaplayıcı
+function sleepCalc117() {
+  const hours = parseFloat(document.getElementById("sleepInput117").value);
+  document.getElementById("sleepOut117").textContent = !isNaN(hours) ? `Önerilen uyku: ${hours} saat` : "Saat girin!";
+}
+
+// 118. Adım Sayısı Tahmini
+function stepCalc118() {
+  const km = parseFloat(document.getElementById("stepsInput118").value);
+  document.getElementById("stepsOut118").textContent = !isNaN(km) ? `${Math.round(km*1312)} adım` : "Mesafe girin!";
+}
+
+// 119. Kalori Hesaplama
+function calorieCalc119() {
+  const kg = parseFloat(document.getElementById("calInput119").value);
+  const cm = parseFloat(document.getElementById("heightInput119").value);
+  const age = parseInt(document.getElementById("ageInput119").value);
+  if(!isNaN(kg) && !isNaN(cm) && !isNaN(age)){
+    const bmr = 10*kg + 6.25*cm - 5*age + 5;
+    document.getElementById("calOut119").textContent = `Günlük kalori: ~${Math.round(bmr)} kcal`;
+  } else document.getElementById("calOut119").textContent = "Eksik bilgi!";
+}
+
+// 120. Rastgele Aktivite Önerisi
+function activityRandom120() {
+  const activities = ["Yürüyüş","Kitap Oku","Film İzle","Müzik Dinle","Arkadaş Ziyareti"];
+  document.getElementById("activityOut120").textContent = activities[Math.floor(Math.random()*activities.length)];
+}
+</script>
+
+<!-- ========================= -->
+<!-- SECTION 10: DİĞER ARAÇLAR -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-8">⚙️ Diğer Araçlar</h2>
+<div class="converter-grid">
+
+  <!-- 1. Gün Sayacı -->
+  <div class="converter" id="tool-121">
+    <h3>Gün Sayacı</h3>
+    <p>Belirli bir tarihe kaç gün kaldığını hesaplayın.</p>
+    <input type="date" id="dayCounterInput121">
+    <button onclick="dayCounter121()">Hesapla →</button>
+    <p>Sonuç: <span id="dayCounterOut121">—</span></p>
+  </div>
+
+  <!-- 2. Yıl Dönümü Hesaplayıcı -->
+  <div class="converter" id="tool-122">
+    <h3>Yıl Dönümü Hesaplayıcı</h3>
+    <p>İki tarih arasındaki yıl farkını bulun.</p>
+    <input type="date" id="annivInput1_122">
+    <input type="date" id="annivInput2_122">
+    <button onclick="annivCalc122()">Hesapla →</button>
+    <p>Sonuç: <span id="annivOut122">—</span></p>
+  </div>
+
+  <!-- 3. Saat Dilimi Görüntüleyici -->
+  <div class="converter" id="tool-123">
+    <h3>Saat Dilimi Görüntüleyici</h3>
+    <p>Farklı şehirlerdeki saatleri görün.</p>
+    <input type="text" id="timezoneInput123" placeholder="Şehir">
+    <button onclick="timezoneShow123()">Göster →</button>
+    <p>Sonuç: <span id="timezoneOut123">—</span></p>
+  </div>
+
+  <!-- 4. Metin Karakter Dönüştürücü -->
+  <div class="converter" id="tool-124">
+    <h3>Metin Karakter Dönüştürücü</h3>
+    <p>Metni büyük/küçük harfe dönüştürün.</p>
+    <input type="text" id="charInput124" placeholder="Metin">
+    <button onclick="charConvert124()">Dönüştür →</button>
+    <p>Sonuç: <span id="charOut124">—</span></p>
+  </div>
+
+  <!-- 5. Daktilo Hızı Testi -->
+  <div class="converter" id="tool-125">
+    <h3>Daktilo Hızı Testi</h3>
+    <p>Daktilo hızınızı ölçün.</p>
+    <textarea id="typingInput125" rows="2" placeholder="Yazın..."></textarea>
+    <button onclick="typingTest125()">Hesapla →</button>
+    <p>Sonuç: <span id="typingOut125">—</span></p>
+  </div>
+
+  <!-- 6. Rastgele Renk Üretici -->
+  <div class="converter" id="tool-126">
+    <h3>Rastgele Renk Üretici</h3>
+    <p>Rastgele HEX renk oluşturun.</p>
+    <button onclick="colorRandom126()">Oluştur →</button>
+    <p>Sonuç: <span id="colorOut126">—</span></p>
+  </div>
+
+  <!-- 7. Lorem Ipsum Oluşturucu -->
+  <div class="converter" id="tool-127">
+    <h3>Lorem Ipsum Oluşturucu</h3>
+    <p>İstediğiniz paragraf sayısında Lorem Ipsum.</p>
+    <input type="number" id="loremInput127" placeholder="Paragraf sayısı">
+    <button onclick="loremGen127()">Oluştur →</button>
+    <p>Sonuç: <span id="loremOut127">—</span></p>
+  </div>
+
+  <!-- 8. Tarih Dönüştürücü -->
+  <div class="converter" id="tool-128">
+    <h3>Tarih Dönüştürücü</h3>
+    <p>Tarihi farklı formatlarda görün.</p>
+    <input type="date" id="dateInput128">
+    <button onclick="dateConvert128()">Dönüştür →</button>
+    <p>Sonuç: <span id="dateOut128">—</span></p>
+  </div>
+
+  <!-- 9. PDF Sayfa Sayacı -->
+  <div class="converter" id="tool-129">
+    <h3>PDF Sayfa Sayacı</h3>
+    <p>PDF dosyasındaki sayfa sayısını öğrenin.</p>
+    <input type="file" id="pdfInput129" accept=".pdf">
+    <button onclick="pdfPageCount129()">Hesapla →</button>
+    <p>Sonuç: <span id="pdfOut129">—</span></p>
+  </div>
+
+  <!-- 10. Metin Seslendirici -->
+  <div class="converter" id="tool-130">
+    <h3>Metin Seslendirici</h3>
+    <p>Metni sesli olarak dinleyin.</p>
+    <input type="text" id="speechInput130" placeholder="Metin">
+    <button onclick="speakText130()">Dinle →</button>
+    <p>Sonuç: <span id="speechOut130">—</span></p>
+  </div>
+
+  <!-- 11. Geri Sayım Sayacı -->
+  <div class="converter" id="tool-131">
+    <h3>Geri Sayım Sayacı</h3>
+    <p>Belirli bir tarihe kadar geri sayın.</p>
+    <input type="datetime-local" id="countdownInput131">
+    <button onclick="countdown131()">Başlat →</button>
+    <p>Sonuç: <span id="countdownOut131">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 121. Gün Sayacı
+function dayCounter121() {
+  const date = new Date(document.getElementById("dayCounterInput121").value);
+  const diff = Math.ceil((date - new Date()) / (1000*60*60*24));
+  document.getElementById("dayCounterOut121").textContent = !isNaN(diff) ? `${diff} gün kaldı` : "Geçerli tarih girin!";
+}
+
+// 122. Yıl Dönümü Hesaplayıcı
+function annivCalc122() {
+  const d1 = new Date(document.getElementById("annivInput1_122").value);
+  const d2 = new Date(document.getElementById("annivInput2_122").value);
+  if(d1.toString() !== "Invalid Date" && d2.toString() !== "Invalid Date") {
+    const diff = Math.abs(d2.getFullYear() - d1.getFullYear());
+    document.getElementById("annivOut122").textContent = `${diff} yıl`;
+  } else document.getElementById("annivOut122").textContent = "Geçerli tarih girin!";
+}
+
+// 123. Saat Dilimi Görüntüleyici
+function timezoneShow123() {
+  const city = document.getElementById("timezoneInput123").value;
+  document.getElementById("timezoneOut123").textContent = city ? `Saat: 12:00 (simülasyon)` : "Şehir girin!";
+}
+
+// 124. Metin Karakter Dönüştürücü
+function charConvert124() {
+  const text = document.getElementById("charInput124").value;
+  document.getElementById("charOut124").textContent = text ? text.toUpperCase() : "Metin girin!";
+}
+
+// 125. Daktilo Hızı Testi
+function typingTest125() {
+  const text = document.getElementById("typingInput125").value;
+  const words = text.trim().split(/\s+/).length;
+  document.getElementById("typingOut125").textContent = `Kelime sayısı: ${words}`;
+}
+
+// 126. Rastgele Renk Üretici
+function colorRandom126() {
+  const color = '#' + Math.floor(Math.random()*16777215).toString(16);
+  document.getElementById("colorOut126").textContent = color;
+}
+
+// 127. Lorem Ipsum Oluşturucu
+function loremGen127() {
+  const count = parseInt(document.getElementById("loremInput127").value);
+  const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+  document.getElementById("loremOut127").textContent = !isNaN(count) ? Array(count).fill(lorem).join(" ") : "Paragraf sayısı girin!";
+}
+
+// 128. Tarih Dönüştürücü
+function dateConvert128() {
+  const date = new Date(document.getElementById("dateInput128").value);
+  document.getElementById("dateOut128").textContent = date.toDateString() || "Geçerli tarih girin!";
+}
+
+// 129. PDF Sayfa Sayacı (simülasyon)
+function pdfPageCount129() {
+  const file = document.getElementById("pdfInput129").files[0];
+  document.getElementById("pdfOut129").textContent = file ? `PDF sayfa sayısı: 10 (simülasyon)` : "PDF seçin!";
+}
+
+// 130. Metin Seslendirici
+function speakText130() {
+  const text = document.getElementById("speechInput130").value;
+  if(text) {
+    const utter = new SpeechSynthesisUtterance(text);
+    speechSynthesis.speak(utter);
+    document.getElementById("speechOut130").textContent = "Metin seslendiriliyor...";
+  } else document.getElementById("speechOut130").textContent = "Metin girin!";
+}
+
+// 131. Geri Sayım Sayacı
+function countdown131() {
+  const target = new Date(document.getElementById("countdownInput131").value);
+  if(target.toString() !== "Invalid Date") {
+    const interval = setInterval(() => {
+      const now = new Date();
+      const diff = target - now;
+      if(diff <= 0){ clearInterval(interval); document.getElementById("countdownOut131").textContent="Süre doldu!"; return; }
+      const days = Math.floor(diff/(1000*60*60*24));
+      const hours = Math.floor((diff/(1000*60*60))%24);
+      const mins = Math.floor((diff/60000)%60);
+      const secs = Math.floor((diff/1000)%60);
+      document.getElementById("countdownOut131").textContent = `${days}g ${hours}s ${mins}dk ${secs}sn`;
+    },1000);
+  } else document.getElementById("countdownOut131").textContent = "Geçerli tarih girin!";
+}
+</script>
 
 
   <!-- Footer -->

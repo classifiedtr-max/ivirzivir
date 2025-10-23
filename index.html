@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>101 İvir Zıvir | Günlük Mini Araçlar 🎲</title>
+<meta name="description" content="101 İvir Zıvir — Türkiye için günlük, eğlenceli ve öğretici mini araçlar. Hesapla, dönüştür, oyna ve öğren! Hepsi tek sayfada.">
+<meta name="keywords" content="101ivirzivir, hesaplama, dönüştürme, mini araçlar, eğlenceli hesaplayıcılar, okul araçları">
+<meta name="author" content="101 İvir Zıvir Ekibi">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#4CAF50">
+
+<style>
+:root {
+  --green-700:#15803d;
+  --green-500:#4CAF50;
+  --bg:#f9fafb;
+  --card:#ecfdf5;
+}
+
+body{margin:0;font-family:sans-serif;background:var(--bg);color:#0f172a;}
+.hero{background:var(--green-700);color:#fff;padding:60px 20px;text-align:center;}
+.hero h1{font-size:2.6rem;margin:0 0 8px;}
+.hero p{margin:0;font-size:1.1rem;opacity:.95}
+
+/* Sidebar */
+.sidebar{width:250px;background:var(--green-700);color:white;padding:20px;position:fixed;top:0;bottom:0;overflow-y:auto;transition:transform .3s;z-index:1000;}
+.sidebar h2{font-size:1.4rem;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:6px;margin:0 0 10px;}
+.sidebar h3{font-size:1rem;margin:14px 0 6px;}
+.sidebar a{display:block;color:#dcfce7;margin:4px 0;padding:4px 6px;border-radius:6px;text-decoration:none;font-size:.92rem;}
+.sidebar a:hover{background:rgba(255,255,255,.12);}
+.menu-toggle{display:none;position:fixed;top:10px;left:10px;background:var(--green-700);color:#fff;border:none;font-size:22px;border-radius:6px;padding:6px 10px;z-index:1100;cursor:pointer;}
+@media(max-width:992px){ .sidebar{transform:translateX(-100%)} .sidebar.open{transform:translateX(0)} .menu-toggle{display:block} }
+
+/* Main content */
+.main{margin-left:300px;padding:20px;transition:margin-left .3s;}
+@media(max-width:992px){ .main{margin-left:0} }
+
+/* Section titles */
+.section-title{font-size:1.6rem;color:var(--green-700);margin:24px 0 10px;}
+
+/* Tool grid */
+.converter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+.converter{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:transform .25s, box-shadow .25s;}
+.converter:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,.12);background:#d1fae5;}
+.converter h3{margin:0 0 6px;}
+.converter p{margin:0 0 8px;font-size:.95rem;opacity:.9;}
+.converter input, .converter select {display:block;width:100%;padding:8px;margin:6px 0;border-radius:8px;border:1px solid #cbd5e1;font-size:.95rem;}
+.converter button{width:100%;padding:10px;margin-top:8px;background:var(--green-700);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+.converter button:hover{background:var(--green-500);transform:scale(1.02);}
+.bold{font-weight:700;}
+
+/* Scroll to top button */
+#scrollTopBtn{position:fixed;bottom:30px;right:30px;z-index:100;background:var(--green-500);color:#fff;border:none;width:50px;height:50px;border-radius:50%;font-size:22px;display:none;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.25);}
+#scrollTopBtn:hover{background:var(--green-700);transform:scale(1.06);}
+@media(max-width:600px){ #scrollTopBtn{bottom:20px;right:20px;width:45px;height:45px;font-size:20px} }
+
+/* Footer */
+footer{background:#f8fafc;border-top:2px solid #e2e8f0;padding:40px 20px;width:100%;box-sizing:border-box;color:#0f172a;font-family:Arial, sans-serif;}
+footer a{color:var(--green-500);text-decoration:none;}
+footer h3, footer h4{color:var(--green-500);}
+footer .grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;}
+footer small{font-size:12px;color:#334155;}
+
+/* Fade-in */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.converter{animation:fadeInUp .55s ease both;}
+</style>
+
+<script>
+function toggleMenu(){document.getElementById('sidebar').classList.toggle('open');}
+</script>
+</head>
+<body>
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<!-- ========================= -->
+<!-- SIDE MENU WITH 101 UTILITIES -->
+<!-- ========================= -->
+<div id="sidebar" class="sidebar">
+  <h2>101 İvir Zıvir 🎲</h2>
+
+  <!-- HESAPLAYICILAR -->
+  <h3>🧮 Hesaplayıcılar</h3>
+  <a href="#tool-1">Faiz Hesaplama</a>
+  <a href="#tool-2">KDV Hesaplama</a>
+  <a href="#tool-3">Zaman Farkı Hesaplayıcı</a>
+  <a href="#tool-4">Vücut Kitle Endeksi (BMI)</a>
+  <a href="#tool-5">Yakıt Gideri Hesaplama</a>
+  <a href="#tool-6">Elektrik Tüketimi</a>
+  <a href="#tool-7">Su Faturası Tahmini</a>
+  <a href="#tool-8">Maaş Hesaplama</a>
+  <a href="#tool-9">Kira Artış Oranı</a>
+  <a href="#tool-10">Zam Oranı Hesaplama</a>
+
+  <!-- DÖNÜŞTÜRÜCÜLER -->
+  <h3>🔄 Dönüştürücüler</h3>
+  <a href="#tool-11">Uzunluk Çevirici</a>
+  <a href="#tool-12">Ağırlık Çevirici</a>
+  <a href="#tool-13">Sıcaklık Çevirici</a>
+  <a href="#tool-14">Para Birimi Çevirici</a>
+  <a href="#tool-15">Zaman Dönüştürücü</a>
+  <a href="#tool-16">Veri Birimi Çevirici</a>
+  <a href="#tool-17">Enerji Dönüştürücü</a>
+  <a href="#tool-18">Alan ve Hacim Çevirici</a>
+  <a href="#tool-19">Hız Dönüştürücü</a>
+  <a href="#tool-20">Basınç Dönüştürücü</a>
+
+  <!-- ANAOKULU -->
+  <h3>👶 Anaokulu Araçları</h3>
+  <a href="#tool-21">Renk Eşleştirme Oyunu</a>
+  <a href="#tool-22">Sesleri Tanı</a>
+  <a href="#tool-23">Şekil Öğren</a>
+  <a href="#tool-24">Harfleri Tanı</a>
+  <a href="#tool-25">Sayılara Başla</a>
+  <a href="#tool-26">Hayvan Sesleri</a>
+  <a href="#tool-27">Meyve & Sebze Eşleştir</a>
+  <a href="#tool-28">Gün & Gece Oyunu</a>
+  <a href="#tool-29">Renk Boyama Aracı</a>
+  <a href="#tool-30">Bul Beni! Oyunu</a>
+
+  <!-- İLKOKUL -->
+  <h3>📘 İlkokul Araçları</h3>
+  <a href="#tool-31">Toplama Alıştırması</a>
+  <a href="#tool-32">Çıkarma Alıştırması</a>
+  <a href="#tool-33">Çarpım Tablosu Oyunu</a>
+  <a href="#tool-34">Saat Okuma Alıştırması</a>
+  <a href="#tool-35">Basit Kesirler</a>
+  <a href="#tool-36">Doğru / Yanlış Testi</a>
+  <a href="#tool-37">Hayvanlar Alemi Quiz</a>
+  <a href="#tool-38">Ülke Bayraklarını Tanı</a>
+  <a href="#tool-39">Rakam Bulmaca</a>
+  <a href="#tool-40">Harf Dizme Oyunu</a>
+
+  <!-- ORTAOKUL -->
+  <h3>📗 Ortaokul Araçları</h3>
+  <a href="#tool-41">Yüzde Hesaplama</a>
+  <a href="#tool-42">Oran Orantı Alıştırması</a>
+  <a href="#tool-43">Geometri Çözücü</a>
+  <a href="#tool-44">Alan & Çevre Hesaplama</a>
+  <a href="#tool-45">Tarih Hesaplama</a>
+  <a href="#tool-46">Basit Denklemler</a>
+  <a href="#tool-47">Kelime Bulmaca</a>
+  <a href="#tool-48">Coğrafya Quiz</a>
+  <a href="#tool-49">Matematik Quiz</a>
+  <a href="#tool-50">Ters Mantık Oyunu</a>
+
+  <!-- LİSE -->
+  <h3>📙 Lise Araçları</h3>
+  <a href="#tool-51">Fonksiyon Hesaplayıcı</a>
+  <a href="#tool-52">Kök Bulucu</a>
+  <a href="#tool-53">Trigonometri Yardımcısı</a>
+  <a href="#tool-54">Fizik Formülleri</a>
+  <a href="#tool-55">Kimya Mol Hesabı</a>
+  <a href="#tool-56">Biyoloji Quiz</a>
+  <a href="#tool-57">Tarih Bilgi Yarışması</a>
+  <a href="#tool-58">Paragraf Anlam Oyunu</a>
+  <a href="#tool-59">TYT Deneme Mini</a>
+  <a href="#tool-60">Üniversite Hedef Belirleyici</a>
+
+  <!-- EĞLENCELİK -->
+  <h3>🎮 Eğlencelik & Sosyal</h3>
+  <a href="#tool-61">Rastgele İsim Üretici</a>
+  <a href="#tool-62">Rastgele Şifre Oluştur</a>
+  <a href="#tool-63">Emoji Dönüştürücü</a>
+  <a href="#tool-64">Zar Atma Oyunu</a>
+  <a href="#tool-65">Yazı Tura</a>
+  <a href="#tool-66">Rastgele Bilgi</a>
+  <a href="#tool-67">Karakter Sayacı</a>
+  <a href="#tool-68">Harf Sayacı</a>
+  <a href="#tool-69">Cümle Karıştırıcı</a>
+  <a href="#tool-70">Motivasyon Sözü Üretici</a>
+
+  <!-- TEKNOLOJİ -->
+  <h3>📱 Teknoloji Araçları</h3>
+  <a href="#tool-71">QR Kod Oluşturucu</a>
+  <a href="#tool-72">Barkod Okuyucu</a>
+  <a href="#tool-73">IP Adres Sorgula</a>
+  <a href="#tool-74">Resim Boyutlandırıcı</a>
+  <a href="#tool-75">Dosya Boyutu Hesapla</a>
+  <a href="#tool-76">Base64 Kodlayıcı</a>
+  <a href="#tool-77">Metin Şifreleyici</a>
+  <a href="#tool-78">Renk Kodu Dönüştürücü</a>
+  <a href="#tool-79">Zaman Damgası Üretici</a>
+  <a href="#tool-80">URL Kısaltıcı</a>
+
+  <!-- GÜNLÜK YAŞAM -->
+  <h3>🏠 Günlük Araçlar</h3>
+  <a href="#tool-81">Not Defteri</a>
+  <a href="#tool-82">Rastgele Yemek Önerisi</a>
+  <a href="#tool-83">Döviz Kuru Görüntüleyici</a>
+  <a href="#tool-84">Hava Durumu Aracı</a>
+  <a href="#tool-85">Takvim & Hatırlatıcı</a>
+  <a href="#tool-86">Doğum Günü Sayacı</a>
+  <a href="#tool-87">Uyku Saati Hesaplayıcı</a>
+  <a href="#tool-88">Adım Sayısı Tahmini</a>
+  <a href="#tool-89">Kalori Hesaplama</a>
+  <a href="#tool-90">Rastgele Aktivite Öner</a>
+
+  <!-- DİĞER / EKSTRA -->
+  <h3>⚙️ Diğer Araçlar</h3>
+  <a href="#tool-91">Gün Sayacı</a>
+  <a href="#tool-92">Yıl Dönümü Hesaplayıcı</a>
+  <a href="#tool-93">Saat Dilimi Görüntüleyici</a>
+  <a href="#tool-94">Metin Karakter Dönüştürücü</a>
+  <a href="#tool-95">Daktilo Hızı Testi</a>
+  <a href="#tool-96">Rastgele Renk Üretici</a>
+  <a href="#tool-97">Lorem Ipsum Oluşturucu</a>
+  <a href="#tool-98">Tarih Dönüştürücü</a>
+  <a href="#tool-99">PDF Sayfa Sayacı</a>
+  <a href="#tool-100">Metin Seslendirici</a>
+  <a href="#tool-101">Geri Sayım Sayacı</a>
+</div>
+
+<!-- ========================= -->
+<!-- MAIN CONTENT -->
+<!-- ========================= -->
+<div class="main">
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>101 İvir Zıvir 🎲</h1>
+    <p>Günlük hayatı kolaylaştıran, eğlenceli ve öğretici mini araçlar tek sayfada!</p>
+  </div>
+  
+  <!-- ========================= -->
+<!-- TESTIMONIALS SECTION: 101 İvir Zıvir -->
+<!-- ========================= -->
+<section id="testimonials" style="padding:60px 20px; background:#f9fafb;">
+  <div class="container center" style="max-width:1200px; margin:auto; text-align:center;">
+    <h2 class="section-title" style="font-size:2em; color:#16a34a;">💬 Kullanıcılarımız Ne Diyor?</h2>
+    <p style="opacity:0.8; margin-bottom:40px;">
+      101 İvir Zıvir, <span class="bold">her yaştan kullanıcı</span> için pratik, eğlenceli ve öğretici araçlarla dolu!
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
+      
+      <div style="background:#f0fdf4; padding:20px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.3s; cursor:pointer;"
+           onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <p>🎲 "Çocuğumla birlikte <span class='bold'>renk ve sayı oyunları</span> oynuyoruz. Hem eğlenceli hem öğretici!"</p>
+        <p style="margin-top:10px; font-weight:bold;">— Elif A.</p>
+      </div>
+
+      <div style="background:#fff7ed; padding:20px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.3s; cursor:pointer;"
+           onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <p>📚 "Matematikten <span class='bold'>çarpım tablosu</span> alıştırmalarına kadar hepsi bir arada, çok faydalı."</p>
+        <p style="margin-top:10px; font-weight:bold;">— Mert K.</p>
+      </div>
+
+      <div style="background:#f0f9ff; padding:20px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.3s; cursor:pointer;"
+           onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <p>⚙️ "Okul ve günlük hayat için <span class='bold'>küçük hesaplayıcılar</span> inanılmaz işe yarıyor."</p>
+        <p style="margin-top:10px; font-weight:bold;">— Ayşe N.</p>
+      </div>
+
+      <div style="background:#fff0f6; padding:20px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.3s; cursor:pointer;"
+           onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <p>💡 "Arkadaş grubumla <span class='bold'>rastgele bilgi</span> oyunlarını çok seviyoruz, sürekli gülüyoruz!"</p>
+        <p style="margin-top:10px; font-weight:bold;">— Selim R.</p>
+      </div>
+
+      <div style="background:#eef2ff; padding:20px; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:transform 0.3s; cursor:pointer;"
+           onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <p>🎯 "Basit ama etkili! <span class='bold'>101 araç</span> arasında mutlaka aradığımı buluyorum."</p>
+        <p style="margin-top:10px; font-weight:bold;">— Burcu E.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= -->
+<!-- SECTION 1: HESAPLAYICILAR -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-1">🧮 Hesaplayıcılar</h2>
+<div class="converter-grid">
+
+  <!-- 1. Faiz Hesaplama -->
+  <div class="converter" id="calc-1">
+    <h3>Faiz Hesaplama</h3>
+    <p>Anapara, faiz oranı ve süreye göre faiz tutarını hesaplayın.</p>
+    <input type="number" id="faizAnapara" placeholder="Anapara (₺)">
+    <input type="number" id="faizOran" placeholder="Faiz Oranı (%)">
+    <input type="number" id="faizSure" placeholder="Süre (yıl)">
+    <button onclick="faizHesapla()">Hesapla</button>
+    <p>Sonuç: <span id="faizSonuc">—</span></p>
+  </div>
+
+  <!-- 2. KDV Hesaplama -->
+  <div class="converter" id="calc-2">
+    <h3>KDV Hesaplama</h3>
+    <p>Fiyat üzerinden KDV dahil veya hariç tutarı hesaplayın.</p>
+    <input type="number" id="kdvTutar" placeholder="Fiyat (₺)">
+    <input type="number" id="kdvOran" placeholder="KDV Oranı (%)" value="20">
+    <button onclick="kdvHesapla()">Hesapla</button>
+    <p>Sonuç: <span id="kdvSonuc">—</span></p>
+  </div>
+
+  <!-- 3. Zaman Farkı Hesaplayıcı -->
+  <div class="converter" id="calc-3">
+    <h3>Zaman Farkı Hesaplayıcı</h3>
+    <p>İki tarih arasındaki gün farkını hesaplayın.</p>
+    <input type="date" id="zaman1">
+    <input type="date" id="zaman2">
+    <button onclick="zamanFarki()">Hesapla</button>
+    <p>Sonuç: <span id="zamanSonuc">—</span></p>
+  </div>
+
+  <!-- 4. Vücut Kitle Endeksi (BMI) -->
+  <div class="converter" id="calc-4">
+    <h3>Vücut Kitle Endeksi (BMI)</h3>
+    <p>Kilonuza ve boyunuza göre BMI değerinizi hesaplayın.</p>
+    <input type="number" id="bmiKilo" placeholder="Kilo (kg)">
+    <input type="number" id="bmiBoy" placeholder="Boy (cm)">
+    <button onclick="bmiHesapla()">Hesapla</button>
+    <p>Sonuç: <span id="bmiSonuc">—</span></p>
+  </div>
+
+  <!-- 5. Yakıt Gideri Hesaplama -->
+  <div class="converter" id="calc-5">
+    <h3>Yakıt Gideri Hesaplama</h3>
+    <p>Mesafe, tüketim ve yakıt fiyatına göre toplam gideri hesaplayın.</p>
+    <input type="number" id="mesafe" placeholder="Mesafe (km)">
+    <input type="number" id="tuketim" placeholder="Ortalama Tüketim (L/100km)">
+    <input type="number" id="fiyat" placeholder="Yakıt Fiyatı (₺/L)">
+    <button onclick="yakıtGideri()">Hesapla</button>
+    <p>Sonuç: <span id="yakıtSonuc">—</span></p>
+  </div>
+
+  <!-- 6. Elektrik Tüketimi -->
+  <div class="converter" id="calc-6">
+    <h3>Elektrik Tüketimi</h3>
+    <p>Cihaz gücü ve kullanım süresine göre enerji tüketimini hesaplayın.</p>
+    <input type="number" id="watt" placeholder="Cihaz Gücü (W)">
+    <input type="number" id="saat" placeholder="Kullanım Süresi (saat)">
+    <input type="number" id="birimFiyat" placeholder="kWh Fiyatı (₺)" value="2.5">
+    <button onclick="elektrikTuketimi()">Hesapla</button>
+    <p>Sonuç: <span id="elektrikSonuc">—</span></p>
+  </div>
+
+  <!-- 7. Su Faturası Tahmini -->
+  <div class="converter" id="calc-7">
+    <h3>Su Faturası Tahmini</h3>
+    <p>Aylık tüketiminize göre ortalama su faturasını hesaplayın.</p>
+    <input type="number" id="suTuketim" placeholder="Tüketim (m³)">
+    <input type="number" id="suBirim" placeholder="m³ Fiyatı (₺)" value="15">
+    <button onclick="suFaturasi()">Hesapla</button>
+    <p>Sonuç: <span id="suSonuc">—</span></p>
+  </div>
+
+  <!-- 8. Maaş Hesaplama -->
+  <div class="converter" id="calc-8">
+    <h3>Maaş Hesaplama</h3>
+    <p>Brüt maaştan net maaşınızı yaklaşık olarak hesaplayın.</p>
+    <input type="number" id="brutMaas" placeholder="Brüt Maaş (₺)">
+    <button onclick="maasHesapla()">Hesapla</button>
+    <p>Sonuç: <span id="maasSonuc">—</span></p>
+  </div>
+
+  <!-- 9. Kira Artış Oranı -->
+  <div class="converter" id="calc-9">
+    <h3>Kira Artış Oranı</h3>
+    <p>TÜFE oranına göre yeni kira miktarınızı hesaplayın.</p>
+    <input type="number" id="eskiKira" placeholder="Eski Kira (₺)">
+    <input type="number" id="tufeOran" placeholder="TÜFE Oranı (%)" value="25">
+    <button onclick="kiraArtis()">Hesapla</button>
+    <p>Sonuç: <span id="kiraSonuc">—</span></p>
+  </div>
+
+  <!-- 10. Zam Oranı Hesaplama -->
+  <div class="converter" id="calc-10">
+    <h3>Zam Oranı Hesaplama</h3>
+    <p>Eski ve yeni fiyatı girerek zam oranını bulun.</p>
+    <input type="number" id="eskiFiyat" placeholder="Eski Fiyat (₺)">
+    <input type="number" id="yeniFiyat" placeholder="Yeni Fiyat (₺)">
+    <button onclick="zamOrani()">Hesapla</button>
+    <p>Sonuç: <span id="zamSonuc">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 1. Faiz Hesaplama
+function faizHesapla() {
+  const p = Number(document.getElementById("faizAnapara").value);
+  const r = Number(document.getElementById("faizOran").value);
+  const t = Number(document.getElementById("faizSure").value);
+  const faiz = (p * r * t) / 100;
+  document.getElementById("faizSonuc").textContent = (faiz + p).toFixed(2) + " ₺ (Toplam)";
+}
+
+// 2. KDV Hesaplama
+function kdvHesapla() {
+  const tutar = Number(document.getElementById("kdvTutar").value);
+  const oran = Number(document.getElementById("kdvOran").value);
+  const kdv = tutar * (oran / 100);
+  document.getElementById("kdvSonuc").textContent = `KDV: ${kdv.toFixed(2)} ₺ | Toplam: ${(tutar + kdv).toFixed(2)} ₺`;
+}
+
+// 3. Zaman Farkı
+function zamanFarki() {
+  const d1 = new Date(document.getElementById("zaman1").value);
+  const d2 = new Date(document.getElementById("zaman2").value);
+  const fark = Math.abs(d2 - d1) / (1000 * 3600 * 24);
+  document.getElementById("zamanSonuc").textContent = `${fark.toFixed(0)} gün`;
+}
+
+// 4. BMI
+function bmiHesapla() {
+  const kilo = Number(document.getElementById("bmiKilo").value);
+  const boy = Number(document.getElementById("bmiBoy").value) / 100;
+  const bmi = kilo / (boy * boy);
+  document.getElementById("bmiSonuc").textContent = bmi.toFixed(2);
+}
+
+// 5. Yakıt Gideri
+function yakıtGideri() {
+  const mesafe = Number(document.getElementById("mesafe").value);
+  const tuketim = Number(document.getElementById("tuketim").value);
+  const fiyat = Number(document.getElementById("fiyat").value);
+  const toplam = (mesafe * tuketim / 100) * fiyat;
+  document.getElementById("yakıtSonuc").textContent = toplam.toFixed(2) + " ₺";
+}
+
+// 6. Elektrik Tüketimi
+function elektrikTuketimi() {
+  const watt = Number(document.getElementById("watt").value);
+  const saat = Number(document.getElementById("saat").value);
+  const birim = Number(document.getElementById("birimFiyat").value);
+  const kwh = (watt * saat) / 1000;
+  const toplam = kwh * birim;
+  document.getElementById("elektrikSonuc").textContent = toplam.toFixed(2) + " ₺";
+}
+
+// 7. Su Faturası
+function suFaturasi() {
+  const tuketim = Number(document.getElementById("suTuketim").value);
+  const birim = Number(document.getElementById("suBirim").value);
+  const toplam = tuketim * birim;
+  document.getElementById("suSonuc").textContent = toplam.toFixed(2) + " ₺";
+}
+
+// 8. Maaş Hesaplama
+function maasHesapla() {
+  const brut = Number(document.getElementById("brutMaas").value);
+  const net = brut * 0.7;
+  document.getElementById("maasSonuc").textContent = net.toFixed(2) + " ₺ (yaklaşık net)";
+}
+
+// 9. Kira Artış
+function kiraArtis() {
+  const eski = Number(document.getElementById("eskiKira").value);
+  const oran = Number(document.getElementById("tufeOran").value);
+  const yeni = eski + (eski * oran / 100);
+  document.getElementById("kiraSonuc").textContent = yeni.toFixed(2) + " ₺";
+}
+
+// 10. Zam Oranı
+function zamOrani() {
+  const eski = Number(document.getElementById("eskiFiyat").value);
+  const yeni = Number(document.getElementById("yeniFiyat").value);
+  const oran = ((yeni - eski) / eski) * 100;
+  document.getElementById("zamSonuc").textContent = oran.toFixed(2) + " %";
+}
+</script>
+
+<!-- ========================= -->
+<!-- SECTION 2: DÖNÜŞTÜRÜCÜLER -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-2">🔄 Dönüştürücüler</h2>
+<div class="converter-grid">
+
+  <!-- 1. Uzunluk Çevirici -->
+  <div class="converter" id="conv-11">
+    <h3>Uzunluk Çevirici</h3>
+    <p>Metre, kilometre ve mil arasında dönüşüm.</p>
+    <div class="row">
+      <input type="number" id="lenM" placeholder="Metre (m)">
+      <input type="number" id="lenKm" placeholder="Kilometre (km)">
+      <input type="number" id="lenMi" placeholder="Mil (mi)">
+    </div>
+    <button onclick="convertLength()">Dönüştür</button>
+    <p>Sonuç: <span id="lenOut">—</span></p>
+  </div>
+
+  <!-- 2. Ağırlık Çevirici -->
+  <div class="converter" id="conv-12">
+    <h3>Ağırlık Çevirici</h3>
+    <p>Kilogram, gram ve pound dönüşümü.</p>
+    <div class="row">
+      <input type="number" id="wKg" placeholder="Kilogram (kg)">
+      <input type="number" id="wG" placeholder="Gram (g)">
+      <input type="number" id="wLb" placeholder="Pound (lb)">
+    </div>
+    <button onclick="convertWeight()">Dönüştür</button>
+    <p>Sonuç: <span id="wOut">—</span></p>
+  </div>
+
+  <!-- 3. Sıcaklık Çevirici -->
+  <div class="converter" id="conv-13">
+    <h3>Sıcaklık Çevirici</h3>
+    <p>Celsius, Fahrenheit, Kelvin arasında.</p>
+    <div class="row">
+      <input type="number" id="tC" placeholder="Celsius (°C)">
+      <input type="number" id="tF" placeholder="Fahrenheit (°F)">
+      <input type="number" id="tK" placeholder="Kelvin (K)">
+    </div>
+    <button onclick="convertTemp()">Dönüştür</button>
+    <p>Sonuç: <span id="tOut">—</span></p>
+  </div>
+
+  <!-- 4. Para Birimi Çevirici -->
+  <div class="converter" id="conv-14">
+    <h3>Para Birimi Çevirici</h3>
+    <p>USD, EUR, TRY arasında anlık çevrim (örnek değerler).</p>
+    <div class="row">
+      <input type="number" id="curTry" placeholder="₺ Türk Lirası">
+      <input type="number" id="curUsd" placeholder="$ Dolar">
+      <input type="number" id="curEur" placeholder="€ Euro">
+    </div>
+    <button onclick="convertCurrency()">Dönüştür</button>
+    <p>Sonuç: <span id="curOut">—</span></p>
+  </div>
+
+  <!-- 5. Zaman Dönüştürücü -->
+  <div class="converter" id="conv-15">
+    <h3>Zaman Dönüştürücü</h3>
+    <p>Saat, dakika ve saniye dönüşümü.</p>
+    <div class="row">
+      <input type="number" id="timeH" placeholder="Saat (h)">
+      <input type="number" id="timeM" placeholder="Dakika (min)">
+      <input type="number" id="timeS" placeholder="Saniye (s)">
+    </div>
+    <button onclick="convertTime()">Dönüştür</button>
+    <p>Sonuç: <span id="timeOut">—</span></p>
+  </div>
+
+  <!-- 6. Veri Birimi Çevirici -->
+  <div class="converter" id="conv-16">
+    <h3>Veri Birimi Çevirici</h3>
+    <p>Byte, KB, MB, GB dönüşümü.</p>
+    <input type="number" id="dataMB" placeholder="MB girin">
+    <button onclick="convertData()">Dönüştür</button>
+    <p>Sonuç: <span id="dataOut">—</span></p>
+  </div>
+
+  <!-- 7. Enerji Dönüştürücü -->
+  <div class="converter" id="conv-17">
+    <h3>Enerji Dönüştürücü</h3>
+    <p>Joule ↔ Kalori ↔ kWh.</p>
+    <input type="number" id="energyJ" placeholder="Joule (J)">
+    <button onclick="convertEnergy()">Dönüştür</button>
+    <p>Sonuç: <span id="energyOut">—</span></p>
+  </div>
+
+  <!-- 8. Alan ve Hacim Çevirici -->
+  <div class="converter" id="conv-18">
+    <h3>Alan ve Hacim Çevirici</h3>
+    <p>m² ↔ ft² ve m³ ↔ litre.</p>
+    <input type="number" id="areaM2" placeholder="m² / m³ girin">
+    <button onclick="convertAreaVol()">Dönüştür</button>
+    <p>Sonuç: <span id="areaOut">—</span></p>
+  </div>
+
+  <!-- 9. Hız Dönüştürücü -->
+  <div class="converter" id="conv-19">
+    <h3>Hız Dönüştürücü</h3>
+    <p>km/h ↔ m/s ↔ mph dönüşümü.</p>
+    <input type="number" id="speedKmh" placeholder="km/h girin">
+    <button onclick="convertSpeed()">Dönüştür</button>
+    <p>Sonuç: <span id="speedOut">—</span></p>
+  </div>
+
+  <!-- 10. Basınç Dönüştürücü -->
+  <div class="converter" id="conv-20">
+    <h3>Basınç Dönüştürücü</h3>
+    <p>Pa ↔ bar ↔ atm dönüşümü.</p>
+    <input type="number" id="pressPa" placeholder="Pascal (Pa)">
+    <button onclick="convertPressure()">Dönüştür</button>
+    <p>Sonuç: <span id="pressOut">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 1. Uzunluk
+function convertLength() {
+  const m = Number(document.getElementById("lenM").value);
+  document.getElementById("lenOut").textContent =
+    `${m} m = ${(m/1000).toFixed(3)} km = ${(m/1609.34).toFixed(3)} mil`;
+}
+
+// 2. Ağırlık
+function convertWeight() {
+  const kg = Number(document.getElementById("wKg").value);
+  document.getElementById("wOut").textContent =
+    `${kg} kg = ${(kg*1000).toFixed(1)} g = ${(kg*2.205).toFixed(2)} lb`;
+}
+
+// 3. Sıcaklık
+function convertTemp() {
+  const c = Number(document.getElementById("tC").value);
+  document.getElementById("tOut").textContent =
+    `${c} °C = ${(c*9/5+32).toFixed(1)} °F = ${(c+273.15).toFixed(2)} K`;
+}
+
+// 4. Para birimi (örnek oranlar)
+function convertCurrency() {
+  const tryAmount = Number(document.getElementById("curTry").value);
+  const usd = (tryAmount / 35).toFixed(2);
+  const eur = (tryAmount / 38).toFixed(2);
+  document.getElementById("curOut").textContent =
+    `${tryAmount} ₺ ≈ ${usd} $ ≈ ${eur} € (örnek oranlar)`;
+}
+
+// 5. Zaman
+function convertTime() {
+  const h = Number(document.getElementById("timeH").value);
+  document.getElementById("timeOut").textContent =
+    `${h} saat = ${(h*60).toFixed(0)} dakika = ${(h*3600).toFixed(0)} saniye`;
+}
+
+// 6. Veri
+function convertData() {
+  const mb = Number(document.getElementById("dataMB").value);
+  document.getElementById("dataOut").textContent =
+    `${mb} MB = ${(mb/1024).toFixed(3)} GB = ${(mb*1024).toFixed(0)} KB`;
+}
+
+// 7. Enerji
+function convertEnergy() {
+  const j = Number(document.getElementById("energyJ").value);
+  document.getElementById("energyOut").textContent =
+    `${j} J = ${(j/4184).toFixed(3)} kcal = ${(j/3.6e6).toFixed(6)} kWh`;
+}
+
+// 8. Alan ve Hacim
+function convertAreaVol() {
+  const val = Number(document.getElementById("areaM2").value);
+  document.getElementById("areaOut").textContent =
+    `${val} m² = ${(val*10.764).toFixed(2)} ft², ${val} m³ = ${(val*1000).toFixed(0)} L`;
+}
+
+// 9. Hız
+function convertSpeed() {
+  const kmh = Number(document.getElementById("speedKmh").value);
+  document.getElementById("speedOut").textContent =
+    `${kmh} km/h = ${(kmh/3.6).toFixed(2)} m/s = ${(kmh/1.609).toFixed(2)} mph`;
+}
+
+// 10. Basınç
+function convertPressure() {
+  const pa = Number(document.getElementById("pressPa").value);
+  document.getElementById("pressOut").textContent =
+    `${pa} Pa = ${(pa/100000).toFixed(5)} bar = ${(pa/101325).toFixed(5)} atm`;
+}
+</script>
+
+<!-- ========================= -->
+<!-- SECTION 3: ANAOKULU ARAÇLARI -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-3">👶 Anaokulu Araçları</h2>
+<div class="converter-grid">
+
+  <!-- 1. Renk Eşleştirme Oyunu -->
+  <div class="converter" id="conv-21">
+    <h3>🎨 Renk Eşleştirme Oyunu</h3>
+    <p>Renkleri doğru şekilde eşleştir!</p>
+    <button onclick="matchColorGame()">Başla 🎨</button>
+    <p>Sonuç: <span id="colorGameOut">—</span></p>
+  </div>
+
+  <!-- 2. Sesleri Tanı -->
+  <div class="converter" id="conv-22">
+    <h3>🔊 Sesleri Tanı</h3>
+    <p>Hangi ses hangi objeye ait? Tahmin et!</p>
+    <button onclick="soundGame()">Sesi Dinle 🔈</button>
+    <p>Sonuç: <span id="soundOut">—</span></p>
+  </div>
+
+  <!-- 3. Şekil Öğren -->
+  <div class="converter" id="conv-23">
+    <h3>🟢 Şekil Öğren</h3>
+    <p>Daire, kare, üçgen gibi şekilleri tanı.</p>
+    <button onclick="showShape()">Göster 🟣</button>
+    <p>Şekil: <span id="shapeOut">—</span></p>
+  </div>
+
+  <!-- 4. Harfleri Tanı -->
+  <div class="converter" id="conv-24">
+    <h3>🔤 Harfleri Tanı</h3>
+    <p>Alfabedeki harfleri öğren ve seslendir.</p>
+    <button onclick="nextLetter()">Bir Harf Göster 🅰️</button>
+    <p>Harf: <span id="letterOut">—</span></p>
+  </div>
+
+  <!-- 5. Sayılara Başla -->
+  <div class="converter" id="conv-25">
+    <h3>🔢 Sayılara Başla</h3>
+    <p>1’den 10’a kadar saymayı öğren!</p>
+    <button onclick="countNumbers()">Sayı Göster 🔟</button>
+    <p>Sayı: <span id="numOut">—</span></p>
+  </div>
+
+  <!-- 6. Hayvan Sesleri -->
+  <div class="converter" id="conv-26">
+    <h3>🐶 Hayvan Sesleri</h3>
+    <p>Sesleri dinle ve hangi hayvan olduğunu tahmin et!</p>
+    <button onclick="animalSound()">Sesi Dinle 🐮</button>
+    <p>Hayvan: <span id="animalOut">—</span></p>
+  </div>
+
+  <!-- 7. Meyve & Sebze Eşleştir -->
+  <div class="converter" id="conv-27">
+    <h3>🍎 Meyve & Sebze Eşleştir</h3>
+    <p>Doğru eşleşmeleri bulmaya çalış!</p>
+    <button onclick="fruitMatch()">Eşleştir 🍓</button>
+    <p>Sonuç: <span id="fruitOut">—</span></p>
+  </div>
+
+  <!-- 8. Gün & Gece Oyunu -->
+  <div class="converter" id="conv-28">
+    <h3>🌞 Gün & Gece Oyunu</h3>
+    <p>Resimlere bak, gün mü gece mi?</p>
+    <button onclick="dayNight()">Oyna 🌙</button>
+    <p>Sonuç: <span id="dayOut">—</span></p>
+  </div>
+
+  <!-- 9. Renk Boyama Aracı -->
+  <div class="converter" id="conv-29">
+    <h3>🖍️ Renk Boyama Aracı</h3>
+    <p>Basit renk paletiyle boyama yap.</p>
+    <button onclick="colorPaint()">Boyamaya Başla 🎨</button>
+    <p>Durum: <span id="paintOut">—</span></p>
+  </div>
+
+  <!-- 10. Bul Beni! Oyunu -->
+  <div class="converter" id="conv-30">
+    <h3>🔍 Bul Beni! Oyunu</h3>
+    <p>Gizlenen objeyi bulabilir misin?</p>
+    <button onclick="findMe()">Bul 🔎</button>
+    <p>Durum: <span id="findOut">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 1. Renk Eşleştirme Oyunu
+function matchColorGame() {
+  const colors = ["Kırmızı", "Mavi", "Yeşil", "Sarı", "Pembe"];
+  const pick = colors[Math.floor(Math.random() * colors.length)];
+  document.getElementById("colorGameOut").textContent = `${pick} rengi seç!`;
+}
+
+// 2. Sesleri Tanı
+function soundGame() {
+  const sounds = ["Kuş", "Köpek", "Tren", "Zil", "Kedi"];
+  const pick = sounds[Math.floor(Math.random() * sounds.length)];
+  document.getElementById("soundOut").textContent = `Bu ses ${pick} sesi olabilir!`;
+}
+
+// 3. Şekil Öğren
+function showShape() {
+  const shapes = ["Daire", "Kare", "Üçgen", "Yıldız", "Kalp"];
+  const pick = shapes[Math.floor(Math.random() * shapes.length)];
+  document.getElementById("shapeOut").textContent = pick;
+}
+
+// 4. Harfleri Tanı
+function nextLetter() {
+  const letters = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
+  const pick = letters[Math.floor(Math.random() * letters.length)];
+  document.getElementById("letterOut").textContent = pick;
+}
+
+// 5. Sayılara Başla
+function countNumbers() {
+  const num = Math.floor(Math.random() * 10) + 1;
+  document.getElementById("numOut").textContent = num;
+}
+
+// 6. Hayvan Sesleri
+function animalSound() {
+  const animals = ["Köpek", "Kedi", "İnek", "At", "Kuş"];
+  const pick = animals[Math.floor(Math.random() * animals.length)];
+  document.getElementById("animalOut").textContent = `${pick} sesi! 🐾`;
+}
+
+// 7. Meyve & Sebze Eşleştir
+function fruitMatch() {
+  const pairs = ["Elma 🍎 - Kırmızı", "Muz 🍌 - Sarı", "Havuç 🥕 - Turuncu"];
+  const pick = pairs[Math.floor(Math.random() * pairs.length)];
+  document.getElementById("fruitOut").textContent = pick;
+}
+
+// 8. Gün & Gece Oyunu
+function dayNight() {
+  const state = Math.random() > 0.5 ? "Gündüz ☀️" : "Gece 🌙";
+  document.getElementById("dayOut").textContent = state;
+}
+
+// 9. Renk Boyama Aracı
+function colorPaint() {
+  const colors = ["Kırmızı", "Mavi", "Yeşil", "Mor", "Turuncu"];
+  const pick = colors[Math.floor(Math.random() * colors.length)];
+  document.getElementById("paintOut").textContent = `${pick} rengiyle boyama başladı!`;
+}
+
+// 10. Bul Beni! Oyunu
+function findMe() {
+  const result = Math.random() > 0.5 ? "Tebrikler! 🎉 Buldun!" : "Tekrar dene! 🙈";
+  document.getElementById("findOut").textContent = result;
+}
+</script>
+
+<!-- ========================= -->
+<!-- SECTION 4: İLKOKUL ARAÇLARI -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-4">📚 İlkokul Araçları</h2>
+<div class="converter-grid">
+
+  <!-- 1. Toplama Alıştırması -->
+  <div class="converter" id="conv-31">
+    <h3>➕ Toplama Alıştırması</h3>
+    <p>Basit toplama işlemleriyle pratik yap.</p>
+    <button onclick="addExercise()">Sor 🔢</button>
+    <p>Soru: <span id="addQ">—</span></p>
+    <input type="number" id="addA" placeholder="Cevabın">
+    <button onclick="checkAdd()">Kontrol Et</button>
+    <p>Sonuç: <span id="addOut">—</span></p>
+  </div>
+
+  <!-- 2. Çıkarma Alıştırması -->
+  <div class="converter" id="conv-32">
+    <h3>➖ Çıkarma Alıştırması</h3>
+    <p>Eksiltme işlemleriyle kendini test et.</p>
+    <button onclick="subExercise()">Sor 🔢</button>
+    <p>Soru: <span id="subQ">—</span></p>
+    <input type="number" id="subA" placeholder="Cevabın">
+    <button onclick="checkSub()">Kontrol Et</button>
+    <p>Sonuç: <span id="subOut">—</span></p>
+  </div>
+
+  <!-- 3. Çarpım Tablosu Oyunu -->
+  <div class="converter" id="conv-33">
+    <h3>✖️ Çarpım Tablosu Oyunu</h3>
+    <p>Hangi sayılar çarpıldığında bu sonucu verir?</p>
+    <button onclick="multiExercise()">Soru Göster 🔢</button>
+    <p>Soru: <span id="multiQ">—</span></p>
+    <input type="number" id="multiA" placeholder="Cevabın">
+    <button onclick="checkMulti()">Kontrol Et</button>
+    <p>Sonuç: <span id="multiOut">—</span></p>
+  </div>
+
+  <!-- 4. Saat Okuma Alıştırması -->
+  <div class="converter" id="conv-34">
+    <h3>🕒 Saat Okuma Alıştırması</h3>
+    <p>Saat kaç? Doğru zamanı tahmin et.</p>
+    <button onclick="showTime()">Saati Göster 🕔</button>
+    <p>Saat: <span id="timeQ">—</span></p>
+    <input type="text" id="timeA" placeholder="Tahminin (örn: 3:45)">
+    <button onclick="checkTime()">Kontrol Et</button>
+    <p>Sonuç: <span id="timeOut">—</span></p>
+  </div>
+
+  <!-- 5. Basit Kesirler -->
+  <div class="converter" id="conv-35">
+    <h3>🧮 Basit Kesirler</h3>
+    <p>Kesirleri sadeleştir veya karşılaştır.</p>
+    <button onclick="fractionExercise()">Soru Göster ➗</button>
+    <p>Soru: <span id="fracQ">—</span></p>
+    <input type="text" id="fracA" placeholder="Cevap (örn: 1/2)">
+    <button onclick="checkFraction()">Kontrol Et</button>
+    <p>Sonuç: <span id="fracOut">—</span></p>
+  </div>
+
+  <!-- 6. Doğru / Yanlış Testi -->
+  <div class="converter" id="conv-36">
+    <h3>✅ Doğru / Yanlış Testi</h3>
+    <p>Basit bilgilerle doğruyu bul.</p>
+    <button onclick="trueFalse()">Soru Göster 🤔</button>
+    <p>Soru: <span id="tfQ">—</span></p>
+    <button onclick="answerTF(true)">Doğru</button>
+    <button onclick="answerTF(false)">Yanlış</button>
+    <p>Sonuç: <span id="tfOut">—</span></p>
+  </div>
+
+  <!-- 7. Hayvanlar Alemi Quiz -->
+  <div class="converter" id="conv-37">
+    <h3>🐘 Hayvanlar Alemi Quiz</h3>
+    <p>Hayvanlar hakkında bilgini test et!</p>
+    <button onclick="animalQuiz()">Soru Göster 🐾</button>
+    <p>Soru: <span id="animalQ">—</span></p>
+    <input type="text" id="animalA" placeholder="Cevabın">
+    <button onclick="checkAnimal()">Kontrol Et</button>
+    <p>Sonuç: <span id="animalOut">—</span></p>
+  </div>
+
+  <!-- 8. Ülke Bayraklarını Tanı -->
+  <div class="converter" id="conv-38">
+    <h3>🏳️‍🌈 Ülke Bayraklarını Tanı</h3>
+    <p>Bayrak hangi ülkeye ait?</p>
+    <button onclick="flagQuiz()">Bayrak Göster 🚩</button>
+    <p>Bayrak: <span id="flagQ">—</span></p>
+    <input type="text" id="flagA" placeholder="Cevabın">
+    <button onclick="checkFlag()">Kontrol Et</button>
+    <p>Sonuç: <span id="flagOut">—</span></p>
+  </div>
+
+  <!-- 9. Rakam Bulmaca -->
+  <div class="converter" id="conv-39">
+    <h3>🔢 Rakam Bulmaca</h3>
+    <p>1-20 arası gizli sayıyı tahmin et!</p>
+    <button onclick="randomNum()">Yeni Sayı 🎯</button>
+    <input type="number" id="guessNum" placeholder="Tahminin">
+    <button onclick="checkNum()">Kontrol Et</button>
+    <p>Sonuç: <span id="numOut2">—</span></p>
+  </div>
+
+  <!-- 10. Harf Dizme Oyunu -->
+  <div class="converter" id="conv-40">
+    <h3>🔤 Harf Dizme Oyunu</h3>
+    <p>Karışık harfleri sıraya diz!</p>
+    <button onclick="wordShuffle()">Yeni Kelime 🔡</button>
+    <p>Karışık: <span id="wordQ">—</span></p>
+    <input type="text" id="wordA" placeholder="Cevabın">
+    <button onclick="checkWord()">Kontrol Et</button>
+    <p>Sonuç: <span id="wordOut">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 1. Toplama
+let a1, a2;
+function addExercise(){ a1=Math.floor(Math.random()*10); a2=Math.floor(Math.random()*10);
+document.getElementById("addQ").textContent=`${a1} + ${a2} = ?`; }
+function checkAdd(){
+ const ans=Number(document.getElementById("addA").value);
+ document.getElementById("addOut").textContent=(ans===a1+a2)?"Doğru ✅":"Yanlış ❌";
+}
+
+// 2. Çıkarma
+let s1, s2;
+function subExercise(){ s1=Math.floor(Math.random()*10+5); s2=Math.floor(Math.random()*5);
+document.getElementById("subQ").textContent=`${s1} - ${s2} = ?`; }
+function checkSub(){
+ const ans=Number(document.getElementById("subA").value);
+ document.getElementById("subOut").textContent=(ans===s1-s2)?"Doğru ✅":"Yanlış ❌";
+}
+
+// 3. Çarpım Tablosu
+let m1, m2;
+function multiExercise(){ m1=Math.floor(Math.random()*10+1); m2=Math.floor(Math.random()*10+1);
+document.getElementById("multiQ").textContent=`${m1} × ${m2} = ?`; }
+function checkMulti(){
+ const ans=Number(document.getElementById("multiA").value);
+ document.getElementById("multiOut").textContent=(ans===m1*m2)?"Doğru ✅":"Yanlış ❌";
+}
+
+// 4. Saat Okuma
+let timeNow;
+function showTime(){
+ const h=Math.floor(Math.random()*12)+1, m=Math.floor(Math.random()*60);
+ timeNow=`${h}:${m.toString().padStart(2,"0")}`;
+ document.getElementById("timeQ").textContent="🕓 Saati oku!";
+}
+function checkTime(){
+ const ans=document.getElementById("timeA").value.trim();
+ document.getElementById("timeOut").textContent=(ans===timeNow)?`Doğru! Saat ${timeNow} ✅`:`Yanlış ❌ (Doğru: ${timeNow})`;
+}
+
+// 5. Kesirler
+let f1, f2;
+function fractionExercise(){
+ f1=Math.floor(Math.random()*5+1); f2=Math.floor(Math.random()*5+1);
+ document.getElementById("fracQ").textContent=`${f1}/${f2} sadeleştir`;
+}
+function checkFraction(){
+ const ans=document.getElementById("fracA").value.trim();
+ document.getElementById("fracOut").textContent=ans?`Cevabın: ${ans} ✅`:"Bir şey yazmadın ❌";
+}
+
+// 6. Doğru/Yanlış
+let tfCurrent, tfAnswer;
+function trueFalse(){
+ const qs=[["Güneş doğudan doğar.",true],["Balinalar balıktır.",false],["2 + 2 = 5",false]];
+ const pick=qs[Math.floor(Math.random()*qs.length)];
+ tfCurrent=pick[0]; tfAnswer=pick[1];
+ document.getElementById("tfQ").textContent=tfCurrent;
+}
+function answerTF(ans){
+ document.getElementById("tfOut").textContent=(ans===tfAnswer)?"Doğru ✅":"Yanlış ❌";
+}
+
+// 7. Hayvanlar Quiz
+let animalAns;
+function animalQuiz(){
+ const qs=[["En büyük kara hayvanı nedir?", "Fil"], ["Uçamayan kuş hangisidir?", "Penguen"]];
+ const pick=qs[Math.floor(Math.random()*qs.length)];
+ document.getElementById("animalQ").textContent=pick[0]; animalAns=pick[1];
+}
+function checkAnimal(){
+ const ans=document.getElementById("animalA").value.trim();
+ document.getElementById("animalOut").textContent=(ans.toLowerCase()===animalAns.toLowerCase())?"Doğru ✅":"Yanlış ❌";
+}
+
+// 8. Bayraklar
+let flagAns;
+function flagQuiz(){
+ const qs=[["🇹🇷", "Türkiye"],["🇯🇵","Japonya"],["🇫🇷","Fransa"]];
+ const pick=qs[Math.floor(Math.random()*qs.length)];
+ document.getElementById("flagQ").textContent=pick[0]; flagAns=pick[1];
+}
+function checkFlag(){
+ const ans=document.getElementById("flagA").value.trim();
+ document.getElementById("flagOut").textContent=(ans.toLowerCase()===flagAns.toLowerCase())?"Doğru ✅":"Yanlış ❌";
+}
+
+// 9. Rakam Bulmaca
+let secretNum;
+function randomNum(){ secretNum=Math.floor(Math.random()*20)+1; document.getElementById("numOut2").textContent="Tahmin Et!"; }
+function checkNum(){
+ const guess=Number(document.getElementById("guessNum").value);
+ const out=document.getElementById("numOut2");
+ if(guess===secretNum) out.textContent="Tebrikler 🎉";
+ else out.textContent=guess>secretNum?"Daha küçük! ⬇️":"Daha büyük! ⬆️";
+}
+
+// 10. Harf Dizme Oyunu
+let wordNow;
+function wordShuffle(){
+ const words=["OKUL","KİTAP","KALEM","ARABA"];
+ wordNow=words[Math.floor(Math.random()*words.length)];
+ const shuffled=wordNow.split("").sort(()=>Math.random()-0.5).join("");
+ document.getElementById("wordQ").textContent=shuffled;
+}
+function checkWord(){
+ const ans=document.getElementById("wordA").value.trim().toUpperCase();
+ document.getElementById("wordOut").textContent=(ans===wordNow)?"Doğru ✅":"Yanlış ❌";
+}
+</script>
+
+<!-- ========================= -->
+<!-- SECTION 5: ORTAOKUL ARAÇLARI -->
+<!-- ========================= -->
+<h2 class="section-title" id="section-5">📐 Ortaokul Araçları</h2>
+<div class="converter-grid">
+
+  <!-- 1. Yüzde Hesaplama -->
+  <div class="converter" id="conv-41">
+    <h3>📊 Yüzde Hesaplama</h3>
+    <p>Bir sayının yüzdesini hesapla.</p>
+    <input type="number" id="percentBase" placeholder="Sayı">
+    <input type="number" id="percentVal" placeholder="Yüzde (%)">
+    <button onclick="calcPercent()">Hesapla</button>
+    <p>Sonuç: <span id="percentOut">—</span></p>
+  </div>
+
+  <!-- 2. Oran Orantı Alıştırması -->
+  <div class="converter" id="conv-42">
+    <h3>⚖️ Oran Orantı Alıştırması</h3>
+    <p>Oran denklemindeki bilinmeyeni bul.</p>
+    <button onclick="ratioExercise()">Yeni Soru 🔢</button>
+    <p>Soru: <span id="ratioQ">—</span></p>
+    <input type="number" id="ratioA" placeholder="x = ?">
+    <button onclick="checkRatio()">Kontrol Et</button>
+    <p>Sonuç: <span id="ratioOut">—</span></p>
+  </div>
+
+  <!-- 3. Geometri Çözücü -->
+  <div class="converter" id="conv-43">
+    <h3>📏 Geometri Çözücü</h3>
+    <p>Dik üçgen hipotenüsünü hesapla.</p>
+    <input type="number" id="geoA" placeholder="Kenar a">
+    <input type="number" id="geoB" placeholder="Kenar b">
+    <button onclick="geoSolve()">Hesapla</button>
+    <p>Sonuç: <span id="geoOut">—</span></p>
+  </div>
+
+  <!-- 4. Alan & Çevre Hesaplama -->
+  <div class="converter" id="conv-44">
+    <h3>📐 Alan & Çevre Hesaplama</h3>
+    <p>Dikdörtgenin alan ve çevresini hesapla.</p>
+    <input type="number" id="rectW" placeholder="Genişlik">
+    <input type="number" id="rectH" placeholder="Yükseklik">
+    <button onclick="rectCalc()">Hesapla</button>
+    <p>Sonuç: <span id="rectOut">—</span></p>
+  </div>
+
+  <!-- 5. Tarih Hesaplama -->
+  <div class="converter" id="conv-45">
+    <h3>📅 Tarih Hesaplama</h3>
+    <p>İki tarih arasındaki gün farkını bul.</p>
+    <input type="date" id="date1">
+    <input type="date" id="date2">
+    <button onclick="dateDiff()">Hesapla</button>
+    <p>Sonuç: <span id="dateOut">—</span></p>
+  </div>
+
+  <!-- 6. Basit Denklemler -->
+  <div class="converter" id="conv-46">
+    <h3>🧮 Basit Denklemler</h3>
+    <p>x + a = b denklemini çöz.</p>
+    <button onclick="eqExercise()">Yeni Denklem 🔢</button>
+    <p>Denklem: <span id="eqQ">—</span></p>
+    <input type="number" id="eqA" placeholder="x = ?">
+    <button onclick="checkEq()">Kontrol Et</button>
+    <p>Sonuç: <span id="eqOut">—</span></p>
+  </div>
+
+  <!-- 7. Kelime Bulmaca -->
+  <div class="converter" id="conv-47">
+    <h3>🧩 Kelime Bulmaca</h3>
+    <p>Eksik harfi tamamla!</p>
+    <button onclick="wordPuzzle()">Yeni Kelime 🔤</button>
+    <p>Kelime: <span id="puzzleQ">—</span></p>
+    <input type="text" id="puzzleA" placeholder="Eksik harf">
+    <button onclick="checkPuzzle()">Kontrol Et</button>
+    <p>Sonuç: <span id="puzzleOut">—</span></p>
+  </div>
+
+  <!-- 8. Coğrafya Quiz -->
+  <div class="converter" id="conv-48">
+    <h3>🌍 Coğrafya Quiz</h3>
+    <p>Dünyayı tanı!</p>
+    <button onclick="geoQuiz()">Yeni Soru 🌎</button>
+    <p>Soru: <span id="geoQzQ">—</span></p>
+    <input type="text" id="geoQzA" placeholder="Cevabın">
+    <button onclick="checkGeoQuiz()">Kontrol Et</button>
+    <p>Sonuç: <span id="geoQzOut">—</span></p>
+  </div>
+
+  <!-- 9. Matematik Quiz -->
+  <div class="converter" id="conv-49">
+    <h3>➗ Matematik Quiz</h3>
+    <p>Rastgele işlemleri çöz.</p>
+    <button onclick="mathQuiz()">Yeni Soru ➕</button>
+    <p>Soru: <span id="mathQ">—</span></p>
+    <input type="number" id="mathA" placeholder="Cevabın">
+    <button onclick="checkMath()">Kontrol Et</button>
+    <p>Sonuç: <span id="mathOut">—</span></p>
+  </div>
+
+  <!-- 10. Ters Mantık Oyunu -->
+  <div class="converter" id="conv-50">
+    <h3>🌀 Ters Mantık Oyunu</h3>
+    <p>“Evet” yaz ama “Hayır” seç! Beynini karıştır!</p>
+    <button onclick="reverseLogic()">Başla 🧠</button>
+    <p>Soru: <span id="revQ">—</span></p>
+    <button onclick="revAns('Evet')">Evet</button>
+    <button onclick="revAns('Hayır')">Hayır</button>
+    <p>Sonuç: <span id="revOut">—</span></p>
+  </div>
+
+</div>
+
+<script>
+// 1. Yüzde Hesaplama
+function calcPercent(){
+  const base=Number(document.getElementById("percentBase").value);
+  const val=Number(document.getElementById("percentVal").value);
+  document.getElementById("percentOut").textContent = (base*val/100).toFixed(2);
+}
+
+// 2. Oran Orantı
+let r1,r2,r3;
+function ratioExercise(){
+  r1=Math.floor(Math.random()*10+1);
+  r2=Math.floor(Math.random()*10+1);
+  r3=Math.floor(Math.random()*10+1);
+  document.getElementById("ratioQ").textContent=`${r1} / ${r2} = x / ${r3}`;
+}
+function checkRatio(){
+  const ans=Number(document.getElementById("ratioA").value);
+  const correct=(r1*r3)/r2;
+  document.getElementById("ratioOut").textContent = Math.abs(ans-correct)<0.1?"Doğru ✅":"Yanlış ❌ ("+correct.toFixed(2)+")";
+}
+
+// 3. Geometri (Hipotenüs)
+function geoSolve(){
+  const a=Number(document.getElementById("geoA").value);
+  const b=Number(document.getElementById("geoB").value);
+  document.getElementById("geoOut").textContent = Math.sqrt(a*a+b*b).toFixed(2);
+}
+
+// 4. Alan & Çevre
+function rectCalc(){
+  const w=Number(document.getElementById("rectW").value);
+  const h=Number(document.getElementById("rectH").value);
+  document.getElementById("rectOut").textContent = `Alan: ${(w*h).toFixed(2)}, Çevre: ${2*(w+h)}`;
+}
+
+// 5. Tarih Hesaplama
+function dateDiff(){
+  const d1=new Date(document.getElementById("date1").value);
+  const d2=new Date(document.getElementById("date2").value);
+  const diff=Math.abs(d2-d1)/(1000*60*60*24);
+  document.getElementById("dateOut").textContent=`${diff} gün`;
+}
+
+// 6. Basit Denklemler
+let eA,eB;
+function eqExercise(){
+  eA=Math.floor(Math.random()*10+1);
+  eB=Math.floor(Math.random()*20+5);
+  document.getElementById("eqQ").textContent=`x + ${eA} = ${eB}`;
+}
+function checkEq(){
+  const ans=Number(document.getElementById("eqA").value);
+  document.getElementById("eqOut").textContent=(ans===(eB-eA))?"Doğru ✅":"Yanlış ❌ (x="+(eB-eA)+")";
+}
+
+// 7. Kelime Bulmaca
+let puzzleWord, missingChar;
+function wordPuzzle(){
+  const words=["KEDİ","ARABA","OKUL","DÜNYA"];
+  puzzleWord=words[Math.floor(Math.random()*words.length)];
+  const i=Math.floor(Math.random()*puzzleWord.length);
+  missingChar=puzzleWord[i];
+  document.getElementById("puzzleQ").textContent=puzzleWord.substring(0,i)+"_" + puzzleWord.substring(i+1);
+}
+function checkPuzzle(){
+  const ans=document.getElementById("puzzleA").value.trim().toUpperCase();
+  document.getElementById("puzzleOut").textContent=(ans===missingChar)?"Doğru ✅":"Yanlış ❌ ("+missingChar+")";
+}
+
+// 8. Coğrafya Quiz
+let gqAns;
+function geoQuiz(){
+  const qs=[["Türkiye'nin başkenti nedir?","Ankara"],["En uzun nehir hangisidir?","Nil"],["En büyük okyanus?","Pasifik"]];
+  const pick=qs[Math.floor(Math.random()*qs.length)];
+  document.getElementById("geoQzQ").textContent=pick[0]; gqAns=pick[1];
+}
+function checkGeoQuiz(){
+  const ans=document.getElementById("geoQzA").value.trim();
+  document.getElementById("geoQzOut").textContent=(ans.toLowerCase()===gqAns.toLowerCase())?"Doğru ✅":"Yanlış ❌ ("+gqAns+")";
+}
+
+// 9. Matematik Quiz
+let mqA,mqB,mqOp;
+function mathQuiz(){
+  const ops=["+","-","×","÷"];
+  mqOp=ops[Math.floor(Math.random()*ops.length)];
+  mqA=Math.floor(Math.random()*10+1);
+  mqB=Math.floor(Math.random()*10+1);
+  document.getElementById("mathQ").textContent=`${mqA} ${mqOp} ${mqB}`;
+}
+function checkMath(){
+  const ans=Number(document.getElementById("mathA").value);
+  let correct;
+  switch(mqOp){
+    case "+": correct=mqA+mqB; break;
+    case "-": correct=mqA-mqB; break;
+    case "×": correct=mqA*mqB; break;
+    case "÷": correct=(mqA/mqB); break;
+  }
+  document.getElementById("mathOut").textContent=Math.abs(ans-correct)<0.1?"Doğru ✅":"Yanlış ❌ ("+correct.toFixed(2)+")";
+}
+
+// 10. Ters Mantık Oyunu
+let reverseTarget;
+function reverseLogic(){
+  const questions=[
+    ["Hayır butonuna bas!", "Hayır"],
+    ["Evet yaz ama Hayır’a bas!", "Hayır"],
+    ["Hayır yaz ama Evet’e bas!", "Evet"]
+  ];
+  const q=questions[Math.floor(Math.random()*questions.length)];
+  document.getElementById("revQ").textContent=q[0];
+  reverseTarget=q[1];
+}
+function revAns(choice){
+  document.getElementById("revOut").textContent=(choice===reverseTarget)?"Doğru ✅":"Yanlış ❌";
+}
+</script>
+
+
+
+  <!-- Footer -->
+  <footer itemscope itemtype="https://schema.org/WPFooter">
+    <div class="grid">
+      <div>
+        <h3>🎲 101 İvir Zıvir</h3>
+        <p><strong>101 İvir Zıvir</strong>, hesaplama, dönüştürme, okul ve eğlence alanlarında <b>101 mini aracı</b> bir araya getirir. Günlük işler için pratik, öğrenciler için eğlenceli bir merkezdir!</p>
+      </div>
+      <div>
+        <h4>🔗 Hızlı Erişim</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.8;">
+          <li><a href="#tool-1">Hesaplayıcılar</a></li>
+          <li><a href="#tool-6">Dönüştürücüler</a></li>
+          <li><a href="#tool-11">Eğitim Araçları</a></li>
+          <li><a href="#tool-16">Eğlencelik</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>💡 Öğrenci Köşesi</h4>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.8;">
+          <li><a href="#tool-21">Anaokulu</a></li>
+          <li><a href="#tool-22">İlkokul</a></li>
+          <li><a href="#tool-23">Ortaokul</a></li>
+          <li><a href="#tool-24">Lise</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>📬 İletişimde Kal</h4>
+        <p>Yeni araçlar eklendiğinde ilk sen öğren!</p>
+        <form action="https://formspree.io/f/mnngkbrz" method="POST" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;">
+          <input type="email" name="email" placeholder="E-posta" required 
+            style="flex:1;min-width:180px;max-width:220px;padding:10px 12px;border:1px solid #94a3b8;border-radius:6px;font-size:.95em;">
+          <button type="submit" style="background:var(--green-500);color:white;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;transition:background .3s;">Gönder</button>
+        </form>
+      </div>
+    </div>
+    <div style="text-align:center;border-top:1px solid #e2e8f0;margin-top:40px;padding-top:15px;font-size:14px;color:#334155;">
+      <p>© <span id="year"></span> <strong>101 İvir Zıvir</strong> — Tüm Hakları Saklıdır.</p>
+      <p style="font-size:12px;">Oluşturulma: <a href="https://hesapla.42web.io" style="color:#4CAF50;text-decoration:none;">hesapla.42web.io</a></p>
+      <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+    </div>
+  </footer>
+
+</div><!-- /.main -->
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Yukarı Çık">⬆️</button>
+<script>
+const scrollBtn=document.getElementById("scrollTopBtn");
+window.addEventListener("scroll",()=>{scrollBtn.style.display=(window.scrollY>300)?"block":"none";});
+scrollBtn.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
+</script>
+
+</body>
+</html>
